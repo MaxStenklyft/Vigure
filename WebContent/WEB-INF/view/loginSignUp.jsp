@@ -6,7 +6,7 @@
 </head>
 <body>
 
-	<h3>Welcome to Vigure! Please login</h3>
+	<h3>Welcome to Bigure! Please login</h3>
 	${error }
 	<form method="post"
 		action="${pageContext.request.contextPath }/login">
