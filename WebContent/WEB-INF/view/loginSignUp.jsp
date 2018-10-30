@@ -1,15 +1,21 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <! DOCTYPE HTML>
+
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login Page</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Login Page</title>
+
 </head>
+
 <body>
 
 	<h3>Welcome to Vigure! Please login</h3>
 	${error }
-	<form method="post"
-		action="${pageContext.request.contextPath }/login">
+	<form method="post" action="${pageContext.request.contextPath }/login">
 		<table>
 			<tr>
 				<td>Username</td>
@@ -27,4 +33,5 @@
 	</form>
 
 </body>
+
 </html>
