@@ -1,4 +1,4 @@
-package com.cs506.vigure;
+package com.cs506.vigure.Controllers;
 
 import javax.servlet.http.HttpSession;
 
