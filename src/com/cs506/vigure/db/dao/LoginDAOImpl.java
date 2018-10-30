@@ -19,11 +19,6 @@ import com.cs506.vigure.db.entity.LoginEntity;
 @Repository
 public class LoginDAOImpl implements LoginDAO {
 	
-	/*
-	@Autowired
-	JdbcTemplate myDataSource;
-	*/
-	
 	// inject session factory
 	@Autowired
 	private SessionFactory sessionFactory;
