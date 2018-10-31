@@ -44,6 +44,24 @@ body {
     font-size: 80%;
 }
 
+.homeRedirect {
+	position: relative;
+	width: 35%;
+    height: 100%;
+    float: right;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.homeRedirect a {
+    position: relative;
+	width: 30%;
+    height: 75%;
+    float: right;
+    padding-top: 20px;
+    font-size: 80%;
+}
+
 .homeSublinks a:link, .homeRedirect a:link {
     color: white;
     text-decoration: none;
@@ -62,24 +80,6 @@ body {
 .homeSublinks a:active , .homeRedirect a:active  {
     color: white;
     text-decoration: none;
-}
-
-.homeRedirect {
-	position: relative;
-	width: 35%;
-    height: 100%;
-    float: right;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-}
-
-.homeRedirect p {
-    position: relative;
-	width: 30%;
-    height: 75%;
-    float: right;
-    padding-top: 20px;
-    font-size: 80%;
 }
 .homeMainPage {
     position: relative;

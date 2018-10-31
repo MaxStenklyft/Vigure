@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cs506.vigure.db.dao.LoginDAO;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/login")
 public class AccountController {
 
 	// injecting DAO for DB access

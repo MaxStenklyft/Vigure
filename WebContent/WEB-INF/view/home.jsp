@@ -14,8 +14,8 @@
             <a href="#howItWorks">HOW IT WORKS</a>
         </div>
         <div class="homeRedirect">
-            <p>LOG IN</p>
-            <p>SIGN UP</p>
+            <a href="signup">SIGN UP</a>
+            <a href="login">LOG IN</a>
             </div>
 </div>
 <div class="homeMainPage">
