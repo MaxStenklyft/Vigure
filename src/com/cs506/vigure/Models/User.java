@@ -1,5 +1,6 @@
 package com.cs506.vigure.Models;
 
+import java.util.ArrayList;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,6 +12,8 @@ public class User {
 	private String userName;
 	private String bio;
 	private String categoricalInterest;
+	private ArrayList<Long> previousDebates;
+	private ArrayList<Long> upcomingDebates;
 	
 	public String getFirstName() {
 		return firstName;
@@ -68,4 +71,19 @@ public class User {
 		this.categoricalInterest = categoricalInterest;
 	}
 	
+	public ArrayList<Long> getPreviousDebates() {
+		return previousDebates;
+	}
+	
+	public void updatePreviousDebates(long debateID) {
+		previousDebates.add(debateID);
+	}
+	
+	public ArrayList<Long> getUpcomingDebates() {
+		return upcomingDebates;
+	}
+	
+	public void updateUpcomingDebates(ArrayList<Long> upcomingDebates) {
+		this.upcomingDebates = upcomingDebates;
+	}
 }

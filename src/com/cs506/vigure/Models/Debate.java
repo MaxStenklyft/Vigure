@@ -13,6 +13,7 @@ public class Debate {
 	private long defenderNum;
 	private Time startTime;
 	private int timeInterval;
+	private long debateID;
 	
 	public String getTopic() {
 		return topic;
@@ -60,6 +61,14 @@ public class Debate {
 	
 	public void setTimeInterval(int timeInterval) {
 		this.timeInterval = timeInterval;
+	}
+	
+	public long getDebateID() {
+		return debateID;
+	}
+	
+	public void setDebateID(long debateID) {
+		this.debateID = debateID;
 	}
 	
 }
