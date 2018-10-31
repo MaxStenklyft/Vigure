@@ -19,7 +19,7 @@ public class AccountController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadLoginPage() {
-		return "loginSignUp";
+		return "home";
 	}
 	
 	@RequestMapping(value = "login", method = RequestMethod.POST)
