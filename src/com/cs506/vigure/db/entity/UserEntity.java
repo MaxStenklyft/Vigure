@@ -33,7 +33,7 @@ public class UserEntity { // this represents the user_model table in db
 	@Column(name="bio")
 	private String bio;
 	
-	@Column(name="bio")
+	@Column(name="categoricalInterest")
 	private String categoricalInterest;
 	
 	@Column(name="previousDebates")
