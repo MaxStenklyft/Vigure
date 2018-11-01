@@ -22,7 +22,7 @@ public class AccountController {
 		return "loginSignUp";
 	}
 	
-	@RequestMapping(value = "login", method = RequestMethod.POST)
+	@RequestMapping(value = "main", method = RequestMethod.POST)
 	public String login(
 		@RequestParam("username") String username,
 		@RequestParam("password") String password,

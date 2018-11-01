@@ -34,11 +34,10 @@
 				<td>Password:</td>
 				<td><input type="password" name="password"></td>
 			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td ><input type="submit" id="signInButton" value="Sign In"></td>
-			</tr>
 		</table>
+		<div class="signIn">
+			<a href="main">SIGN IN</a>
+			</div>
 	</form>
 	<div class="signInAgreement">
 			<p>By clicking Sign In, you agree to our License Agreement and have read and acknowledge our Privacy Statement.</p>
