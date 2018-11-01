@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="login_model")
-public class UserEntity {
+@Table(name="user_model")
+public class UserEntity { // this represents the user_model table in db
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

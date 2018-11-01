@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="login_model")
-public class LoginEntity {
+public class LoginEntity { // this represents the login_model table in the db
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

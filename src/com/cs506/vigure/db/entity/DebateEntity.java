@@ -10,8 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="debate_model")
-
-public class DebateEntity {
+public class DebateEntity { // this represents the debate_model table in the db
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
