@@ -6,7 +6,7 @@ import com.cs506.vigure.Models.Debate;
 import com.cs506.vigure.Models.User;
 
 @Controller
-public class HomeController {
+public class MainController {
 	
 	private User userModel;
 
