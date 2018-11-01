@@ -2,15 +2,15 @@ package com.cs506.vigure.Controllers;
 
 import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
-import com.cs506.vigure.Models.Debate;
-import com.cs506.vigure.Models.User;
+import com.cs506.vigure.db.entity.DebateEntity;
+import com.cs506.vigure.db.entity.UserEntity;
 
 @Controller
 public class HomeController {
 	
-	private User userModel;
+	private UserEntity userModel;
 
-	public void loadHomePage(User userModel) {
+	public void loadHomePage(UserEntity userModel) {
 		// TODO
 		this.userModel = userModel;
 	}
@@ -19,14 +19,14 @@ public class HomeController {
 		//TODO
 	}
 	
-	public void sendDebateRequest(Debate debateModel) {
+	public void sendDebateRequest(DebateEntity debateModel) {
 		//TODO
 	}
 	
 	public void getPreviousDebates() {
 		//TODO use list of debate IDs to retrieve debate models from database and return list
 		ArrayList<Long> previousDebateIDs = userModel.getPreviousDebates();
-		ArrayList<Debate> previousDebates = new ArrayList<Debate>();
+		ArrayList<DebateEntity> previousDebates = new ArrayList<DebateEntity>();
 		
 		for (Long id : previousDebateIDs) {
 			//lookup debate in database
@@ -36,7 +36,7 @@ public class HomeController {
 	public void getUpcomingDebates() {
 		//TODO use list of debate IDs to retrieve debate models from database and return list
 		ArrayList<Long> upcomingDebateIDs = userModel.getUpcomingDebates();
-		ArrayList<Debate> upcomingDebates = new ArrayList<Debate>();
+		ArrayList<DebateEntity> upcomingDebates = new ArrayList<DebateEntity>();
 		
 		for (Long id : upcomingDebateIDs) {
 			//lookup debate in database
