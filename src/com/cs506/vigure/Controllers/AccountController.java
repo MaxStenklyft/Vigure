@@ -45,9 +45,9 @@ public class AccountController {
 		}*/
 	}
 
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.removeAttribute("username");
-		return "redirect:../Vigure";
+		return "redirect:../";
 	}
 }
