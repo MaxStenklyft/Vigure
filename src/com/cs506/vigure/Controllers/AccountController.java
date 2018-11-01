@@ -22,7 +22,7 @@ public class AccountController {
 		return "loginSignUp";
 	}
 	
-	@RequestMapping(value = "login", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public String login(
 		@RequestParam("username") String username,
 		@RequestParam("password") String password,
@@ -45,9 +45,9 @@ public class AccountController {
 		}*/
 	}
 
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.removeAttribute("username");
-		return "redirect:../Vigure";
+		return "redirect:../";
 	}
 }

@@ -9,7 +9,7 @@
 	<h3>Success Page</h3>
 	Welcome ${sessionScope.username }
 	<br>
-	<a href="${pageContext.request.contextPath }/logout">Logout</a>
+	<a href="${pageContext.request.contextPath }/login/logout">Logout</a>
 
 </body>
 </html>
