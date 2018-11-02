@@ -27,6 +27,7 @@ public class AccountController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
+
 	public String login(
 		@RequestParam("username") String username,
 		@RequestParam("password") String password,
