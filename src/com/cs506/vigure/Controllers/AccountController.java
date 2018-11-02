@@ -13,6 +13,10 @@ import com.cs506.vigure.db.dao.LoginDAO;
 @RequestMapping("/login")
 public class AccountController {
 
+	public AccountController() {
+		
+	}
+	
 	// injecting DAO for DB access
 	@Autowired
 	private LoginDAO loginDAO;

@@ -67,7 +67,6 @@
     
     <!-- Step 10: Enable configuration of transactional behavior based on annotations -->
 	<tx:annotation-driven transaction-manager="myTransactionManager" />
-
 </beans>
 
 
