@@ -16,7 +16,7 @@ public class MainController {
 	private UserEntity userModel;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public void loadHomePage(UserEntity userModel) {
+	public String loadHomePage(UserEntity userModel) {
 		// TODO
 		this.userModel = userModel;
 		return "main";
