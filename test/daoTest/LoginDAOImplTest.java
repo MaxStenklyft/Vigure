@@ -1,8 +1,8 @@
 package daoTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
+import com.cs506.vigure.db.dao.LoginDAOImpl;
 
 class LoginDAOImplTest {
 
@@ -13,7 +13,11 @@ class LoginDAOImplTest {
 
 	@Test
 	void testValidateUser() {
-		fail("Not yet implemented");
+		//getting instance of LoginDAOImpl
+		LoginDAOImpl loginDAOImplInstance = new LoginDAOImpl();
+		
+		//testing return value
+		assertEquals(loginDAOImplInstance.validateUser("tstUsr97", "testpass"), true );
 	}
 
 }
