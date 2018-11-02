@@ -1,0 +1,191 @@
+* {
+	margin: 0 0;
+	padding: 0 0;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.debateRoomPage {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: lightgray;
+}
+
+.debateRoomHeader {
+    position: relative;
+	width: 100%;
+	height: 10%;
+    background-color: #3A3B3F;
+}
+
+.accountMain {
+	position: relative;
+	height: 10vh;
+	width: 10vh;
+	background-image: url("../images/account.png");
+    background-repeat: no-repeat;
+	background-size: 100% 100%;
+	float: right;
+	margin-right: 10px;
+}
+
+.titleAndVideos {
+	position: relative;
+	width: 75%;
+	height: 90%;
+	text-align: center;
+	background-color: lightgray;
+	float: left;
+}
+
+.roomTitle {
+	position: relative;
+	width: 100%;
+	height: 20%;
+	font-family: 'Anton', sans-serif;
+	font-size: 160%;
+}
+
+.roomTitle h2 {
+	line-height: 250%;
+}
+
+.videoFeeds {
+	position: relative;
+	width: 100%;
+	height: 80%;
+	background-color: lightgray;
+	text-align: center;
+}
+
+.userVideo {
+	position: relative;
+	width: 30%;
+	height: 90%;
+	background-color: darkslategray;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.opponentVideo {
+	position: relative;
+	width: 30%;
+	height: 90%;
+	background-color: darkslategray;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.debateRoomSideBar {
+	position: relative;
+	width: 25%;
+	height: 90%;
+	text-align: center;
+	float: right;
+}
+
+.debateDescription {
+	position: relative;
+	width: 100%;
+	height: 15%;
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Popup container */
+.popupDebateDescription {
+	position: relative;
+	width: 40%;
+	height: 40px;
+    display: inline-block;
+	cursor: pointer;
+	padding-top: 10px;
+	border-radius: 3px;
+	background-color: lightpink;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+	margin: 0 0 0 -25%;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid black;
+}
+
+/* The actual popup (appears on top) */
+.descriptionPopup {
+	visibility: hidden;
+	background-color: lightpink;
+	position: absolute;
+	width: 90%;
+	height: 75%;
+	z-index: 1;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid black;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Popup arrow */
+.descriptionPopup::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.descriptionPopup.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+}
+
+.surrenderTime {
+	position: relative;
+	width: 100%;
+	height: 70%;
+}
+
+.surrenderTime button {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    height: 10%;
+    width: 50%;
+	margin: -15% 0 0 -25%;
+	font-family: 'Montserrat', sans-serif;
+	background-color: lightyellow;
+	border-color: darkgoldenrod;
+
+}
+
+.endDebate {
+	position: relative;
+	width: 100%;
+	height: 10%;
+}
+
+.endDebate button {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    height: 60%;
+    width: 50%;
+	margin: -15% 0 0 -25%;
+	font-family: 'Montserrat', sans-serif;
+	background-color: red;
+	border-color: darkred;
+}
+

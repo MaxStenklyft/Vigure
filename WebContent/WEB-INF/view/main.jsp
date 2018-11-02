@@ -50,7 +50,7 @@
                                 </tr>
                         </table>
                         <div class="createDebateButton">
-                            <a href="login">Create</a>
+                            <a href="debateRoom">Create</a>
                         </div>
                 </div>
             </div>
