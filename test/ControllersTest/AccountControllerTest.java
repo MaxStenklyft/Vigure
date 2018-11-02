@@ -22,7 +22,13 @@ class AccountControllerTest {
 	
 	@Test
 	void testLoadLoginPage() {
-		fail("Not yet implemented");
+		// getting instance of an AccountController
+		AccountController accountControllerInstance = new AccountController();
+
+		// getting return string from loadLoginPage method
+		String redirect = accountControllerInstance.loadLoginPage();
+		
+		assertEquals(redirect, "loginSignUp");
 	}
 
 	@Test
