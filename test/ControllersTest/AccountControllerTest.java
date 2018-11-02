@@ -8,6 +8,10 @@ import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.*;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 import com.cs506.vigure.Controllers.AccountController;
 
 
@@ -32,10 +36,19 @@ class AccountControllerTest {
 	}
 
 	@Test
-	void testLogin() {		
-		//assertEquals("testLoginSucc", );
+	void testLogin() throws Exception {		
+		// getting instance of an AccountController
+		//AccountController accountControllerInstance = new AccountController();
+		//HttpSession session = new MockHttpSession(null, "test-session-id");
+		//mockMvc = MockMvcBuilders
+        //        .standaloneSetup(accountControllerInstance)
+        //        .build();
 		
-		fail("Not yet implemented");
+		//mockMvc.perform(post("/login").param("username", "tstUsr97")
+		//        .param("password", "testpass"));
+				//.andExpect(status().isOk())/*.andExpect(view().name("testLoginSucc"))*/;
+		
+		fail("not yet implemented");
 	}
 	
 	@Test
