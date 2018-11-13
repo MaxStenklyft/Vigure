@@ -21,7 +21,7 @@ public class DebateEntity { // this represents the debate_model table in the db
 	private String topic;
 	
 	@Column(name="status")
-	private String status;
+	private int status;
 	
 	@Column(name="instigatorNum")
 	private long instigatorNum;
@@ -34,6 +34,9 @@ public class DebateEntity { // this represents the debate_model table in the db
 	
 	@Column(name="timeInterval")
 	private int timeInterval;
+	
+	@Column(name="rounds")
+	private int rounds;
 	
 	public long getId() {
 		return id;
@@ -51,11 +54,11 @@ public class DebateEntity { // this represents the debate_model table in the db
 		this.topic = topic;
 	}
 
-	public String getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
@@ -89,5 +92,13 @@ public class DebateEntity { // this represents the debate_model table in the db
 
 	public void setTimeInterval(int timeInterval) {
 		this.timeInterval = timeInterval;
+	}
+	
+	public int getRounds() {
+		return this.rounds;
+	}
+	
+	public void setRounds(int rounds) {
+		this.rounds = rounds;
 	}
 }
