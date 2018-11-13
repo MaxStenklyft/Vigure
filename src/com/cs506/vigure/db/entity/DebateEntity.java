@@ -17,6 +17,9 @@ public class DebateEntity { // this represents the debate_model table in the db
 	@Column(name="ID")
 	private long id;
 
+	@Column(name="title")
+	private String title;
+	
 	@Column(name="topic")
 	private String topic;
 	
@@ -100,5 +103,13 @@ public class DebateEntity { // this represents the debate_model table in the db
 	
 	public void setRounds(int rounds) {
 		this.rounds = rounds;
+	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }
