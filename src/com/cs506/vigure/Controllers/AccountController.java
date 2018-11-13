@@ -27,7 +27,6 @@ public class AccountController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-
 	public String login(
 		@RequestParam("username") String username,
 		@RequestParam("password") String password,
@@ -35,19 +34,12 @@ public class AccountController {
 		
 		if(loginDAO.validateUser(username, password)) {
 			session.setAttribute("username", username);
-			return "testLoginSucc";
+			return "main";
 		}
 		else {
 			return "loginSignUp";
 		}
 		
-		// basic test, credentials stored in .java file
-		/*if(username.equalsIgnoreCase("acc1") && password.equalsIgnoreCase("123")) {
-			session.setAttribute("username", username);
-			return "testLoginSucc";
-		} else {
-			return "loginSignUp";
-		}*/
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

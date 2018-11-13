@@ -31,7 +31,7 @@
 	</div>
 	<p id = "mandatoryField">* denotes that the field is required</p>
 	${error }
-	<form method="post" action="${pageContext.request.contextPath }/login">
+	<form method="post" action="${pageContext.request.contextPath }/signup">
 		<table>
 			<tr>
 					<td>*Email:</td>
