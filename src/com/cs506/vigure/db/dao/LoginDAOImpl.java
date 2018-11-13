@@ -29,8 +29,39 @@ public class LoginDAOImpl implements LoginDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	public void register(String email, String user, String password) {
-		// TODO figure out user registration
+	@Transactional
+	public boolean register(String email, String user, String password) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		String sql = "from LoginEntity where userName='" + user + "'";
+		
+		Query<LoginEntity> loginQuery = currentSession.createQuery(sql, LoginEntity.class);
+		
+		List<LoginEntity> logins = loginQuery.getResultList();
+		
+		// begin username check
+		if(logins.size() > 0) {
+			// TODO non-unique username error
+			return false;
+		}
+		else if(!(email.substring(email.indexOf("@")+1).equals("wisc.edu"))) {
+			// TODO non-wisc email error
+			return false;
+		}
+		else { // username is good, begin password check
+			if(password.length() < 6 || password.length() > 20) {
+				// TODO bad password length
+				return false;
+			}
+		}
+		
+		LoginEntity currUserLogin = new LoginEntity(email, user, password);
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+		session.save(currUserLogin);
+		session.getTransaction().commit();
+		
+		return true; // passes all checks the user can be registered!
 	}
 
 	@Override
