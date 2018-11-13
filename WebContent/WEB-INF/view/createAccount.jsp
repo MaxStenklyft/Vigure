@@ -23,19 +23,20 @@
 	<div class="signUpText">
 	<p>Create an account and start debating</p>
 	</div>
+	<p id = "mandatoryField">* denotes that the field is required</p>
 	${error }
 	<form method="post" action="${pageContext.request.contextPath }/login">
 		<table>
 			<tr>
-					<td>Email:</td>
+					<td>*Email:</td>
 					<td><input type="text" name="email"></td>
 			</tr>
 			<tr>
-				<td>Username:</td>
+				<td>*Username:</td>
 				<td><input type="text" name="username"></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
+				<td>*Password:</td>
 				<td><input type="password" name="password"></td>
 			</tr>
 			<tr>
