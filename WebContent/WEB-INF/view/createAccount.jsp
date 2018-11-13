@@ -13,6 +13,12 @@
 
 <body>
 <div class="signUpPage">
+	<div class="goToSignIn">
+		<p class="goSignInText">Already have a Vigure account?</p>
+		<a href="login" class="goSignInButton">
+			<p>Sign In</p>
+		</a>
+	</div>
 	<div class="heading">
 		<div class="title">
 		<h1>Vigure</h1>
