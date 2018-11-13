@@ -14,43 +14,38 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cs506.vigure.db.entity.LoginEntity;
+import com.cs506.vigure.db.entity.DebateEntity;
+import com.cs506.vigure.db.entity.UserEntity;
+
+import Enums.DebateStatusEnum;
 
 @Repository
 public class DebateDAOImpl implements DebateDAO {
 	
-//	/*
-//	@Autowired
-//	JdbcTemplate myDataSource;
-//	*/
-//	
-//	// inject session factory
-//	@Autowired
-//	private SessionFactory sessionFactory;
-//	
-//	@Override
-//	public void register(String email, String user, String password) {
-//		// TODO figure out user registration
-//	}
-//
-//	@Override
-//	@Transactional
-//	public boolean validateUser(String user, String password) {
-//		
-//		Session currentSession = sessionFactory.getCurrentSession();
-//		
-//		String sql = "from LoginEntity where userName='" + user 
-//					 + "' and password='" + password + "'";
-//		
-//		Query<LoginEntity> loginQuery = currentSession.createQuery(sql, LoginEntity.class); 
-//		
-//		List<LoginEntity> logins = loginQuery.getResultList();
-//		
-//		if(logins.size() >= 1) {
-//			return true;
-//		}
-//		
-//		return false;
-//	}
+	// inject session factory
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	
+	@Override
+	@Transactional
+	public void sendDebateRequest(DebateEntity debateEntity) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		currentSession.save(debateEntity);
+	}
+
+	@Override
+	public List<DebateEntity> getUsersDebates(UserEntity user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void updateDebateStatus(DebateStatusEnum status, int debateID) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 }

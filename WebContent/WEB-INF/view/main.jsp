@@ -27,9 +27,11 @@
                         </div>
                 </div>
                 <div class="createPopup" id="debatePopup">
+                	<form:form method="POST" action="/spring-mvc-xml/createDebate" 
+                		modelAttribute="">
                         <table>
                                 <tr>
-                                    <td>Room Title:</td>
+                                    <td><form:label path="">Room Title:</form:label></td>
                                     <td><input type="text" name="roomTitle"></td>
                                 </tr>
                                 <tr>
@@ -52,6 +54,7 @@
                         <div class="createDebateButton">
                             <a href="debateRoom">Create</a>
                         </div>
+                	</form:form>
                 </div>
             </div>
             <div class="invitations">
