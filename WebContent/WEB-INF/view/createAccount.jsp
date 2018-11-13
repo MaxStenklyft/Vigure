@@ -24,7 +24,7 @@
 	<p>Create an account and start debating</p>
 	</div>
 	${error }
-	<form method="post" action="${pageContext.request.contextPath }/login">
+	<form method="post" action="${pageContext.request.contextPath }/signup">
 		<table>
 			<tr>
 					<td>Email:</td>

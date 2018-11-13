@@ -34,7 +34,7 @@ public class AccountController {
 		
 		if(loginDAO.validateUser(username, password)) {
 			session.setAttribute("username", username);
-			return "testLoginSucc";
+			return "main";
 		}
 		else {
 			return "loginSignUp";
