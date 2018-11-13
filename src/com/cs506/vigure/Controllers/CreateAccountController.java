@@ -13,8 +13,7 @@ import com.cs506.vigure.db.dao.LoginDAO;
 @RequestMapping("/signup")
 public class CreateAccountController {
 
-	public CreateAccountController() {
-		
+	public CreateAccountController() {	
 	}
 		
 	@RequestMapping(method = RequestMethod.GET)

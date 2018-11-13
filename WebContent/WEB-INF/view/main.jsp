@@ -35,15 +35,15 @@
                                     <td><input type="text" name="roomTitle"></td>
                                 </tr>
                                 <tr>
-                                    <td>Debate Topic:</td>
+                                    <td>*Debate Topic:</td>
                                     <td><input type="text" name="debateTopic"></td>
                                 </tr>
                                 <tr>
-                                    <td>Opponent:</td>
+                                    <td>*Opponent:</td>
                                     <td><input type="text" name="opponent"></td>
                                 </tr>
                                 <tr>
-                                    <td>Scheduled Time:</td>
+                                    <td>*Scheduled Time:</td>
                                     <td><input type="text" name="scheduledTime"></td>
                                 </tr>
                                 <tr>
