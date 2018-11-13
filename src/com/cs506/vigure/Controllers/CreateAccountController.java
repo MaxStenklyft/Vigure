@@ -34,9 +34,10 @@ public class CreateAccountController {
 			@RequestParam("COI") String coi) {
 				
 		if(loginDAO.register(email, username, password)) {
-			return "main";
+			return "home";
 		}
-		
-		return "home";
+		else {
+			return "signup";
+		}
 	}
 }

@@ -56,10 +56,7 @@ public class LoginDAOImpl implements LoginDAO {
 		}
 		
 		LoginEntity currUserLogin = new LoginEntity(email, user, password);
-		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-		session.save(currUserLogin);
-		session.getTransaction().commit();
+		sessionFactory.getCurrentSession().save(currUserLogin);
 		
 		return true; // passes all checks the user can be registered!
 	}
