@@ -14,7 +14,7 @@ public class AccountSettingsController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadUserSettingsPage() {
-		return "loginSignUp";
+		return "settings";
 	}
 	
 	public void changeUserSettings() {

@@ -10,7 +10,7 @@
 <body>
     <div class="mainPage">
             <div class="mainHeader">
-                <a href="login"><div class="accountMain">
+                <a href="settings"><div class="accountMain">
                 </div></a>
             </div>
             <div class="createAndSearch">
