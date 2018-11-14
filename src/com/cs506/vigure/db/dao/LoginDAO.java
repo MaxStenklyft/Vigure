@@ -6,4 +6,6 @@ public interface LoginDAO {
 	 boolean register(String email, String user, String password);
 	
 	 boolean validateUser(String user, String password);
+	 
+	 int getUsernameID(String user);
 }

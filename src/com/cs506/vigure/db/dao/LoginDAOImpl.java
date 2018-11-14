@@ -55,6 +55,7 @@ public class LoginDAOImpl implements LoginDAO {
 			}
 		}
 		
+		// store entry to login_model table in DB
 		LoginEntity currUserLogin = new LoginEntity(email, user, password);
 		sessionFactory.getCurrentSession().save(currUserLogin);
 		
@@ -79,6 +80,18 @@ public class LoginDAOImpl implements LoginDAO {
 		}
 		
 		return false;
+	}
+	
+	public int getUsernameID(String user) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		String sql = "from LoginEntity where userName='" + user + "'";
+		
+		Query<LoginEntity> loginQuery = currentSession.createQuery(sql, LoginEntity.class);
+		
+		List<LoginEntity> logins = loginQuery.getResultList();
+		
+		return logins.get(0).getId();		
 	}
 
 }

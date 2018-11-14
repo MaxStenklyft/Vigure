@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import com.cs506.vigure.db.entity.UserEntity;
 
 public class UserDAOImpl implements UserDAO {
 
@@ -13,9 +14,11 @@ public class UserDAOImpl implements UserDAO {
 	
 	@Override
 	@Transactional
-	public void addRegisteredUser(int id, String firstName, String lastName, String picture, String username,
+	public void addRegisteredUser(int id, String username,
 			String bio, String coi) {
-		Session currentSession = sessionFactory.getCurrentSession();
+		
+		UserEntity currUser = new UserEntity(id, username, bio, coi);
+		sessionFactory.getCurrentSession().save(currUser);
 	}
 
 }

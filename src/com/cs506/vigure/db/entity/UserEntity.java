@@ -42,6 +42,13 @@ public class UserEntity { // this represents the user_model table in db
 	@Column(name="upcomingDebates")
 	private ArrayList<Long> upcomingDebates;
 
+	public UserEntity(int id, String username, String bio, String coi) {
+		this.id = id;
+		this.userName = username;
+		this.bio = bio;
+		this.categoricalInterest = coi;
+	}
+	
 	public long getId() {
 		return id;
 	}
