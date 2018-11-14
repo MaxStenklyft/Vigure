@@ -28,9 +28,44 @@ public class LoginDAOImpl implements LoginDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	private Session getCurrSesh() {
+		return sessionFactory.getCurrentSession();
+	}
+	
 	@Override
-	public void register(String email, String user, String password) {
-		// TODO figure out user registration
+	@Transactional
+	public boolean register(String email, String user, String password) {
+		//Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession = getCurrSesh();
+		
+		String sql = "from LoginEntity where userName='" + user + "'";
+		
+		Query<LoginEntity> loginQuery = currentSession.createQuery(sql, LoginEntity.class);
+		
+		List<LoginEntity> logins = loginQuery.getResultList();
+		
+		// begin username check
+		if(logins.size() > 0) {
+			// TODO non-unique username error
+			return false;
+		}
+		else if(!(email.substring(email.indexOf("@")+1).equals("wisc.edu"))) {
+			// TODO non-wisc email error
+			return false;
+		}
+		else { // username is good, begin password check
+			if(password.length() < 6 || password.length() > 20) {
+				// TODO bad password length
+				return false;
+			}
+		}
+		
+		// store entry to login_model table in DB
+		LoginEntity currUserLogin = new LoginEntity(email, user, password);
+		//sessionFactory.getCurrentSession().save(currUserLogin);
+		currentSession.save(currUserLogin);
+		
+		return true; // passes all checks the user can be registered!
 	}
 
 	@Override
@@ -51,6 +86,20 @@ public class LoginDAOImpl implements LoginDAO {
 		}
 		
 		return false;
+	}
+	
+	@Transactional
+	public int getUsernameID(String user) {
+		//Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession = getCurrSesh();
+		
+		String sql = "from LoginEntity where userName='" + user + "'";
+		
+		Query<LoginEntity> loginQuery = currentSession.createQuery(sql, LoginEntity.class);
+		
+		List<LoginEntity> logins = loginQuery.getResultList();
+		
+		return logins.get(0).getId();		
 	}
 
 }

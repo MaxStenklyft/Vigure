@@ -25,6 +25,16 @@ public class LoginEntity {
 	@Column(name="password")
 	private String password;
 	
+	public LoginEntity() {
+		
+	}
+	
+	public LoginEntity(String email, String userName, String password) {
+		this.email = email;
+		this.userName = userName;
+		this.password = password;
+	}
+	
 	public int getId() {
 		return id;
 	}
