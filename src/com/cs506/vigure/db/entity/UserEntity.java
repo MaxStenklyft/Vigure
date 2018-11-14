@@ -14,7 +14,6 @@ import javax.persistence.Table;
 public class UserEntity { // this represents the user_model table in db
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
 	private long id;
 	

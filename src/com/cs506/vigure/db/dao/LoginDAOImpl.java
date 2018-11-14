@@ -28,10 +28,15 @@ public class LoginDAOImpl implements LoginDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	private Session getCurrSesh() {
+		return sessionFactory.getCurrentSession();
+	}
+	
 	@Override
 	@Transactional
 	public boolean register(String email, String user, String password) {
-		Session currentSession = sessionFactory.getCurrentSession();
+		//Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession = getCurrSesh();
 		
 		String sql = "from LoginEntity where userName='" + user + "'";
 		
@@ -57,7 +62,8 @@ public class LoginDAOImpl implements LoginDAO {
 		
 		// store entry to login_model table in DB
 		LoginEntity currUserLogin = new LoginEntity(email, user, password);
-		sessionFactory.getCurrentSession().save(currUserLogin);
+		//sessionFactory.getCurrentSession().save(currUserLogin);
+		currentSession.save(currUserLogin);
 		
 		return true; // passes all checks the user can be registered!
 	}
@@ -82,8 +88,10 @@ public class LoginDAOImpl implements LoginDAO {
 		return false;
 	}
 	
+	@Transactional
 	public int getUsernameID(String user) {
-		Session currentSession = sessionFactory.getCurrentSession();
+		//Session currentSession = sessionFactory.getCurrentSession();
+		Session currentSession = getCurrSesh();
 		
 		String sql = "from LoginEntity where userName='" + user + "'";
 		

@@ -45,7 +45,7 @@ public class CreateAccountController {
 			return "home";
 		}
 		else {
-			return "signup";
+			return "createAccount";
 		}
 	}
 }
