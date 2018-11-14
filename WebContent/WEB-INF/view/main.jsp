@@ -15,18 +15,21 @@
             </div>
             <div class="createAndSearch">
                 <div class="searchUsers">
+                    <form>
                         <table>
                                 <tr>
                                     <td>Search Users: </td>
                                     <td><input type="text" name="users"></td>
                                 </tr>
                         </table>
+                    </form>
                 </div>
                 <div class="createDebateRoom">
                         <div class="popupDebateRoom" onclick="popupDebateRoom()">Create Debate Room
                         </div>
                 </div>
                 <div class="createPopup" id="debatePopup">
+                    <form>
                         <table>
                                 <tr>
                                     <td>*Room Title:</td>
@@ -49,9 +52,12 @@
                                     <td><input type="text" name="speakingInterval"></td>
                                 </tr>
                         </table>
+                    </form>
+                    <a href="debateRoom">
                         <div class="createDebateButton">
-                            <a href="debateRoom">Create</a>
+                            <p>Create</p>
                         </div>
+                    </a>
                 </div>
             </div>
             <div class="invitations">
