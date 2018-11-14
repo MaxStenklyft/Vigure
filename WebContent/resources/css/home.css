@@ -123,6 +123,29 @@ body {
 	height: 100%;
 	background-color: white;
 }
+
+#howItWorksHeading {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 90px;
+	text-align: center;
+	font-size: 200%;
+	color: #3399FF;
+}
+
+#howItWorksInfo {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 30px;
+	text-align: left;
+	font-size: 90%;
+	line-height: 1.75;
+	color: red;
+	font-family: 'Montserrat', sans-serif;
+}
+
 .support {
     position: relative;
 	width: 100%;
