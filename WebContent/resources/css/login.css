@@ -40,14 +40,6 @@ body {
 	font-size: 130%;
 }
 
-.subHeading {
-	position: relative;
-	width: 100%;
-	height: 20%;
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-}
-
 .loginCreds {
 	position: relative;
 	width: 30%;
@@ -59,45 +51,53 @@ body {
 	-webkit-box-sizing: border-box;
 	border: 1px solid black;
 	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .signInText {
 	position: relative;
-	height: 20%;
+	height: 25%;
 	width: 100%;
 	display: flex;
 }
 
 .signInText p {
 	margin: auto;
-	font-family: 'Montserrat', sans-serif;
 	font-size: 90%;
+}
+
+.loginCreds form {
+	position: relative;
+	width: 100%;
+	height: 35%;
+	margin-bottom: 13%;
 }
 
 .loginCreds table {
 	position: relative;
 	width: 100%;
-	height: 40%;
+	height: 80%;
 	text-align: center;
 	font-weight: bold;
-	font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
 }
 
 .signIn {
 	position: relative;
-	width: 100%;
-	height: 10%;
-
+    width: 70%;
+    margin-left: 15%;
+    height: 20%;
+    background-color: #0077C5;
+    border-radius: 3px;
+    display: flex;    
+    border-color: #0077C5;
+    color: white;
+    font-size: 100%;
+    text-decoration: none;
 }
 
-#signInButton {
-	background-color: #0077C5;
-	position: relative;
-	width: 70%;
-	height: 40%;
-	border-color: #0077C5;
-	border-radius: 3px;
-	color: white;
+.signIn p{
+    margin: auto;
 }
 
 .signInAgreement {
@@ -105,7 +105,6 @@ body {
 	height: 12%;
 	width: 90%;
 	padding: 0 5%;
-	font-family: 'Montserrat', sans-serif;
 	font-size: 75%;
 }
 
@@ -121,7 +120,6 @@ body {
 	height: 15%;
 	width: 100%;
 	padding-top: 3%;
-	font-family: 'Montserrat', sans-serif;
 	font-size: 80%;
 	font-weight: bold;
 }

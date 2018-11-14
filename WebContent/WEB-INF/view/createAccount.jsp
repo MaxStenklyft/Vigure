@@ -13,6 +13,12 @@
 
 <body>
 <div class="signUpPage">
+	<div class="goToSignIn">
+		<p class="goSignInText">Already have a Vigure account?</p>
+		<a href="login" class="goSignInButton">
+			<p>Sign In</p>
+		</a>
+	</div>
 	<div class="heading">
 		<div class="title">
 		<h1>Vigure</h1>
@@ -23,19 +29,20 @@
 	<div class="signUpText">
 	<p>Create an account and start debating</p>
 	</div>
+	<p id = "mandatoryField">* denotes that the field is required</p>
 	${error }
 	<form method="post" action="${pageContext.request.contextPath }/signup">
 		<table>
 			<tr>
-					<td>Email:</td>
+					<td>*Email:</td>
 					<td><input type="text" name="email"></td>
 			</tr>
 			<tr>
-				<td>Username:</td>
+				<td>*Username:</td>
 				<td><input type="text" name="username"></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
+				<td>*Password:</td>
 				<td><input type="password" name="password"></td>
 			</tr>
 			<tr>
