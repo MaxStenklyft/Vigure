@@ -23,19 +23,33 @@
         <div class="subHeading"><h3>When you debate with an open mind, the opportunities to learn are boundless</h3></div>
 </div>
 <div id="howItWorks" class="howItWorks">
-		<div id = "howItWorksHeading">
-			<h1>How It Works</h1>
-			<div id = "howItWorksInfo">
-				<h2>1.	Register for a free account!</h2>
-				<h2>2.	Search for users to debate/Join random debate rooms</h2>
-				<h2>3.	Create debate requests featuring various topics with specific constraints/Accept debate invites</h2>
-				<h2>4.	Hop on the application during the scheduled debate time</h2>
-				<h2>5.	Complete debate</h2>
-			</div>
-		</div>
+    <div class="howItWorksHeading">
+            <h1>How It Works</h1>
+    </div>
+    <div class="howItWorksText">
+        <h3>
+                1)	Register for a free account!<br>
+                2)	Search for users to debate/Join random debate rooms<br>
+                3)	Create debate requests featuring various topics with specific constraints/Accept debate invites<br>
+                4)	Hop on the application during the scheduled debate time<br>
+                5)	Complete debate<br>
+        </h3>
 </div>
-<div id="support" class="support"></div>
-
+<div class="howItWorksImg">
+    <img src="resources/images/howItWorks.png" alt="howItWorks">
+</div>
+</div>
+<div id="support" class="support">
+    <div class="supportHeading">
+            <h1>Help and Support</h1>
+    </div>
+    <div class="supportText">
+        <h3>
+                Email Us: &nbsp;&nbsp;&nbsp;&nbsp;spatil5@wisc.edu<br>
+                Call Us: &nbsp;&nbsp;&nbsp;&nbsp;(+1) 6086220050<br>
+        </h3>
+    </div>
+</div>
 </div>
 </body>
 </html>
