@@ -27,34 +27,35 @@
                         </div>
                 </div>
                 <div class="createPopup" id="debatePopup">
-                	<form:form method="POST" action="/spring-mvc-xml/createDebate" 
-                		modelAttribute="">
+                	<form method="post" action="${pageContext.request.contextPath }/main/sendDebateRequest">
                         <table>
                                 <tr>
-                                    <td><form:label path="">Room Title:</form:label></td>
+                                    <td>Room Title:</td>
                                     <td><input type="text" name="roomTitle"></td>
                                 </tr>
                                 <tr>
-                                    <td>*Debate Topic:</td>
+                                    <td>Debate Topic:</td>
                                     <td><input type="text" name="debateTopic"></td>
                                 </tr>
                                 <tr>
-                                    <td>*Opponent:</td>
+                                    <td>Opponent:</td>
                                     <td><input type="text" name="opponent"></td>
                                 </tr>
                                 <tr>
-                                    <td>*Scheduled Time:</td>
-                                    <td><input type="text" name="scheduledTime"></td>
+                                    <td>Scheduled Time:</td>
+                                    <td><input type="datetime-local" name="scheduledTime"></td>
                                 </tr>
                                 <tr>
                                     <td>Speaking Interval:</td>
                                     <td><input type="text" name="speakingInterval"></td>
                                 </tr>
+                                <tr>
+                                    <td>Rounds:</td>
+                                    <td><input type="text" name="rounds"></td>
+                                </tr>
                         </table>
-                        <div class="createDebateButton">
-                            <a href="debateRoom">Create</a>
-                        </div>
-                	</form:form>
+                        <input type="submit"/>
+                	</form>
                 </div>
             </div>
             <div class="invitations">
