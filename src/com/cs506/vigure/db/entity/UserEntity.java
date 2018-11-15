@@ -48,6 +48,8 @@ public class UserEntity { // this represents the user_model table in db
 		this.categoricalInterest = coi;
 	}
 	
+	public UserEntity(){}
+	
 	public long getId() {
 		return id;
 	}

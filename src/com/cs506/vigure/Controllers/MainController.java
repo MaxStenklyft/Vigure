@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +13,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 
 import com.cs506.vigure.db.dao.DebateDAO;
 import com.cs506.vigure.db.dao.LoginDAO;
@@ -23,25 +25,31 @@ import Enums.DebateStatusEnum;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/main")
 public class MainController {
 	
 	
+	public MainController(){
+		
+	}
+	
 	// injecting DAO for DB access
 	@Autowired
 	private DebateDAO debateDao;
-	
-	private UserEntity userModel;
 
+	@Transactional
 	@RequestMapping(method = RequestMethod.GET)
-	public String loadMainPage(UserEntity userModel) {
+	public ModelAndView loadMainPage(UserEntity user, HttpSession currSession) {
 		// TODO
-		
-		
-		this.userModel = userModel;
-		return "main";
+		//UserEntity user = (UserEntity) mav.getModelMap().get("user");
+		ModelAndView mav = new ModelAndView("main");
+		List<DebateEntity> debates = debateDao.getUsersDebates(user.getId());
+		mav.addObject("debates", debates);
+		mav.addObject("user", user);
+		return mav;
 	}
 	
 	@Transactional

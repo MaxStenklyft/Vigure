@@ -40,7 +40,7 @@ public class DebateDAOImpl implements DebateDAO {
 
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		String sql = "from DebateEntity where userID='" + userId ;
+		String sql = "from DebateEntity where instigatorNum='" + userId + "'";// OR where defenderNum='" + userId + "'";
 		
 		Query<DebateEntity> debateQuery = currentSession.createQuery(sql, DebateEntity.class); 
 		

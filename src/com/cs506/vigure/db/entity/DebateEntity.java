@@ -41,6 +41,8 @@ public class DebateEntity { // this represents the debate_model table in the db
 	@Column(name="rounds")
 	private int rounds;
 	
+	public DebateEntity(){}
+	
 	public long getId() {
 		return id;
 	}

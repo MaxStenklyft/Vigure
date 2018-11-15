@@ -1,7 +1,10 @@
 package com.cs506.vigure.db.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +24,33 @@ public class UserDAOImpl implements UserDAO {
 		
 		UserEntity currUser = new UserEntity(id, username, bio, coi);
 		sessionFactory.getCurrentSession().save(currUser);
+	}
+	
+	@Override
+	@Transactional
+	public UserEntity searchForEntityById(long input) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		String sql = "from UserEntity where ID='" + input + "'";
+		
+		Query<UserEntity> userQuery = currentSession.createQuery(sql, UserEntity.class);
+		List<UserEntity> users = userQuery.getResultList();
+		
+		if (users.size() == 1) {
+			return users.get(0);
+		}
+		
+		else if (users.size() == 0) {
+			//No match
+			return null;
+		}
+		
+		else {
+			//TODO Error
+			return null;
+		}
+
 	}
 
 }
