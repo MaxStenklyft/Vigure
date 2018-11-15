@@ -39,7 +39,8 @@ public class AccountController {
 		password = null;
 		
 		if(hashedPassword != null && loginDAO.validateUser(username, hashedPassword)) {
-			session.setAttribute("username", username);
+			long currUserID = loginDAO.getUsernameID(username);
+			session.setAttribute("userID", currUserID);
 			return "main";
 		}
 		else {
