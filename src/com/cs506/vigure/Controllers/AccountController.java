@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.cs506.vigure.db.dao.LoginDAO;
+import com.cs506.vigure.db.dao.UserDAO;
 
 @Controller
 @RequestMapping("/login")
@@ -23,6 +24,10 @@ public class AccountController {
 	// injecting DAO for DB access
 	@Autowired
 	private LoginDAO loginDAO;
+	
+	// injecting DAO for DB access
+	@Autowired
+	private UserDAO userDAO;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadLoginPage() {
@@ -41,7 +46,8 @@ public class AccountController {
 		if(hashedPassword != null && loginDAO.validateUser(username, hashedPassword)) {
 			long currUserID = loginDAO.getUsernameID(username);
 			session.setAttribute("userID", currUserID);
-			return "/main";
+			
+			return loadMainPage();
 		}
 		else {
 			return "loginSignUp";

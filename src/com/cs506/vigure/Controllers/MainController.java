@@ -36,7 +36,7 @@ public class MainController {
 	private UserEntity userModel;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String loadHomePage(UserEntity userModel) {
+	public String loadMainPage(UserEntity userModel) {
 		// TODO
 		
 		
