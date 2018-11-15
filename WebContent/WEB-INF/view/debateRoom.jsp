@@ -10,26 +10,25 @@
 <body>
     <div class="debateRoomPage">
             <div class="debateRoomHeader">
-                    <a href="login"><div class="accountMain">
+                    <a href="settings"><div class="accountMain">
                     </div></a>
+            </div>
+            <div class="titleAndVideos">
+                <div class="roomTitle">
+                    <h2>Was the moon landing in 1969 real?</h2>
                 </div>
-                <div class="titleAndVideos">
-                    <div class="roomTitle">
-                        <h2>Was the moon landing in 1969 real?</h2>
-                    </div>
-                    <div class="videoFeeds">
-                    <div class="userVideo">
-                    </div>
-                    <div class="opponentVideo">
-                    </div>
+                <div class="videoFeeds">
+                <div class="userVideo">
                 </div>
-
+                <div class="opponentVideo">
                 </div>
+            </div>
+            </div>
                 <div class="debateRoomSideBar">
 
                     <div class="debateDescription">
-                            <div class="popupDebateDescription" onclick="popupDebateDescription()">Description
-                            </div>
+                            <button onclick="popupDebateDescription()">Description
+                            </button>
                     </div>
 
                     <div class="descriptionPopup" id="debateDescriptionPopup">

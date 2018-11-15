@@ -27,9 +27,10 @@
 	</div>
 <div class="signUpCreds">
 	<div class="signUpText">
-	<p>Create an account and start debating</p>
+	<p>Create an account and start debating<br>
+		<i id="mandatoryField">* denotes that the field is required</i>
+	</p>
 	</div>
-	<p id = "mandatoryField">* denotes that the field is required</p>
 	${error }
 	<form method="post" action="${pageContext.request.contextPath }/signup">
 		<table>
