@@ -19,14 +19,6 @@ public class UserNameSearchDAOImpl implements UserNameSearchDAO {
 	
 	@Override
 	@Transactional
-	/**
-	* The searchUserName method returns a userEntity with a matching userName.
-	* This method returns a userEntity object or null if there are no userName matches.
-	*
-	* @author  Cameron Johnson
-	* @version 
-	* @since    
-	*/
 	public UserEntity searchUserName(String input) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
