@@ -54,7 +54,7 @@ public class MainController {
 	
 	@Transactional
 	@RequestMapping(value = "/sendDebateRequest", method = RequestMethod.POST)
-	public String sendDebateRequest(
+	public ModelAndView sendDebateRequest(
 			@RequestParam("roomTitle") String roomTitle,
 			@RequestParam("debateTopic") String debateTopic,
 			@RequestParam("opponent") String opponent,
@@ -63,6 +63,7 @@ public class MainController {
 			@RequestParam("rounds") String rounds,
 			HttpSession session) {
 		List<String> errors = new ArrayList<>();
+		ModelAndView mav = new ModelAndView("main");
 		
 		
 		DebateEntity debate = new DebateEntity();
@@ -77,7 +78,10 @@ public class MainController {
 		if(errors.size() == 0) {
 			debateDao.sendDebateRequest(debate);
 		}
-		return "main";
+		StringBuilder sb = new StringBuilder();
+		sb.append(errors.toArray());
+		mav.addObject("errors", sb.toString());
+		return mav;
 	}
 	
 	public List<DebateEntity> getDebates(long userId) {

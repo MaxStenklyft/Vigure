@@ -53,4 +53,29 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
+	@Override
+	public UserEntity searchForEntityByUserName(String userName) {
+
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		String sql = "from UserEntity where username='" + userName + "'";
+		
+		Query<UserEntity> userQuery = currentSession.createQuery(sql, UserEntity.class);
+		List<UserEntity> users = userQuery.getResultList();
+		
+		if (users.size() == 1) {
+			return users.get(0);
+		}
+		
+		else if (users.size() == 0) {
+			//No match
+			return null;
+		}
+		
+		else {
+			//TODO Error
+			return null;
+		}
+	}
+
 }
