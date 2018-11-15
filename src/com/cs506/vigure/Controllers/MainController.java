@@ -5,8 +5,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cs506.vigure.db.dao.DebateDAO;
 import com.cs506.vigure.db.dao.LoginDAO;
@@ -23,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/main")
 public class MainController {
 	
+	
 	// injecting DAO for DB access
 	@Autowired
 	private DebateDAO debateDao;
@@ -32,19 +38,24 @@ public class MainController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String loadHomePage(UserEntity userModel) {
 		// TODO
+		
+		
 		this.userModel = userModel;
 		return "main";
 	}
 	
+	@Transactional
 	@RequestMapping(value = "/sendDebateRequest", method = RequestMethod.POST)
-	public void sendDebateRequest(
+	public String sendDebateRequest(
 			@RequestParam("roomTitle") String roomTitle,
 			@RequestParam("debateTopic") String debateTopic,
 			@RequestParam("opponent") String opponent,
 			@RequestParam("scheduledTime") String scheduledTime,
 			@RequestParam("speakingInterval") String speakingInterval,
-			@RequestParam("rounds") String rounds) {
+			@RequestParam("rounds") String rounds,
+			HttpSession session) {
 		List<String> errors = new ArrayList<>();
+		
 		
 		DebateEntity debate = new DebateEntity();
 		errors.addAll(validateRoomTitle(roomTitle, debate));
@@ -53,38 +64,25 @@ public class MainController {
 		errors.addAll(validateScheduledTime(scheduledTime, debate));
 		errors.addAll(validateSpeakingInterval(speakingInterval, debate));
 		errors.addAll(validateRounds(rounds, debate));
-		debate.setInstigatorNum(1);//TODO Pull this off the current session
+		debate.setInstigatorNum((long)session.getAttribute("userID"));
 		
-		debateDao.sendDebateRequest(debate);
+		if(errors.size() == 0) {
+			debateDao.sendDebateRequest(debate);
+		}
+		return "main";
 	}
 	
-	public void getPreviousDebates() {
+	public List<DebateEntity> getDebates(long userId) {
 		//TODO use list of debate IDs to retrieve debate models from database and return list
-		ArrayList<Long> previousDebateIDs = userModel.getPreviousDebates();
 		ArrayList<DebateEntity> previousDebates = new ArrayList<DebateEntity>();
 		
-		for (Long id : previousDebateIDs) {
-			//lookup debate in database
-		}
-	}
-	
-	public void getUpcomingDebates() {
-		//TODO use list of debate IDs to retrieve debate models from database and return list
-		ArrayList<Long> upcomingDebateIDs = userModel.getUpcomingDebates();
-		ArrayList<DebateEntity> upcomingDebates = new ArrayList<DebateEntity>();
+		return debateDao.getUsersDebates(userId);
 		
-		for (Long id : upcomingDebateIDs) {
-			//lookup debate in database
-		}
-	}
-	
-	public void getUserInfo() {
-		//TODO
 	}
 	
 	private List<String> validateRounds(String rounds, DebateEntity debate) {
 		List<String> errors = new ArrayList<>();
-		if(rounds != null && rounds.length() > 1) {
+		if(rounds != null && rounds.length() >= 1) {
 			try {
 				int numRounds = Integer.parseInt(rounds);
 				debate.setRounds(numRounds);

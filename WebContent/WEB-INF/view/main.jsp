@@ -29,11 +29,7 @@
                         </div>
                 </div>
                 <div class="createPopup" id="debatePopup">
-<<<<<<< HEAD
                 	<form method="post" action="${pageContext.request.contextPath }/main/sendDebateRequest">
-=======
-                    <form>
->>>>>>> master
                         <table>
                                 <tr>
                                     <td>Room Title:</td>

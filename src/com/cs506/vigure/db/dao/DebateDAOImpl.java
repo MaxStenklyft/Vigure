@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cs506.vigure.db.entity.DebateEntity;
+import com.cs506.vigure.db.entity.LoginEntity;
 import com.cs506.vigure.db.entity.UserEntity;
 
 import Enums.DebateStatusEnum;
@@ -30,14 +31,22 @@ public class DebateDAOImpl implements DebateDAO {
 	@Override
 	@Transactional
 	public void sendDebateRequest(DebateEntity debateEntity) {
-		Session currentSession = sessionFactory.getCurrentSession();
-		currentSession.save(debateEntity);
+		sessionFactory.getCurrentSession().save(debateEntity);
 	}
 
 	@Override
-	public List<DebateEntity> getUsersDebates(UserEntity user) {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public List<DebateEntity> getUsersDebates(long userId) {
+
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		String sql = "from DebateEntity where userID='" + userId ;
+		
+		Query<DebateEntity> debateQuery = currentSession.createQuery(sql, DebateEntity.class); 
+		
+		List<DebateEntity> debates = debateQuery.getResultList();
+		
+		return debates;
 	}
 
 

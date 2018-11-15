@@ -11,7 +11,7 @@ import Enums.DebateStatusEnum;
 public interface DebateDAO {
 	void sendDebateRequest(DebateEntity debateEntity);
 	
-	List<DebateEntity> getUsersDebates(UserEntity user);
+	List<DebateEntity> getUsersDebates(long userId);
 	 
 	void updateDebateStatus(DebateStatusEnum status, int debateID);
 }
