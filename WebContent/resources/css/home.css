@@ -123,9 +123,82 @@ body {
 	height: 100%;
 	background-color: white;
 }
+
+.howItWorksHeading {
+    position: relative;
+	width: 100%;
+    height: 25%;
+    display: flex;
+}
+
+.howItWorksHeading h1 {
+	position: relative;
+    text-align: center;
+    margin: auto;
+	font-size: 300%;
+    font-family: 'Anton', sans-serif;
+}
+
+.howItWorksText {
+    position: relative;
+    padding-left: 5%;
+	width: 60%;
+    height: 75%;
+    float: left;
+}
+
+.howItWorksText h3 {
+	position: relative;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+    font-size: 120%;
+    line-height: 300%;
+}
+
+.howItWorksImg {
+    position: relative;
+    float: right;
+	width: 35%;
+    height: 75%;
+}
+
+.howItWorksImg img {
+    position: relative;
+	width: 80%;
+}
+
 .support {
     position: relative;
 	width: 100%;
 	height: 100%;
 	background-color: lightgray;
+}
+
+.supportHeading {
+    position: relative;
+	width: 100%;
+    height: 25%;
+    display: flex;
+}
+
+.supportHeading h1 {
+	position: relative;
+    text-align: center;
+    margin: auto;
+	font-size: 300%;
+    font-family: 'Anton', sans-serif;
+}
+
+.supportText {
+    position: relative;
+	width: 100%;
+    height: 75%;
+}
+
+.supportText h3 {
+	position: relative;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+    font-size: 120%;
+    line-height: 300%;
 }

@@ -10,24 +10,30 @@
 <body>
     <div class="mainPage">
             <div class="mainHeader">
-                <a href="login"><div class="accountMain">
+                <a href="settings"><div class="accountMain">
                 </div></a>
             </div>
             <div class="createAndSearch">
                 <div class="searchUsers">
+                    <form>
                         <table>
                                 <tr>
                                     <td>Search Users: </td>
                                     <td><input type="text" name="users"></td>
                                 </tr>
                         </table>
+                    </form>
                 </div>
                 <div class="createDebateRoom">
                         <div class="popupDebateRoom" onclick="popupDebateRoom()">Create Debate Room
                         </div>
                 </div>
                 <div class="createPopup" id="debatePopup">
+<<<<<<< HEAD
                 	<form method="post" action="${pageContext.request.contextPath }/main/sendDebateRequest">
+=======
+                    <form>
+>>>>>>> master
                         <table>
                                 <tr>
                                     <td>Room Title:</td>

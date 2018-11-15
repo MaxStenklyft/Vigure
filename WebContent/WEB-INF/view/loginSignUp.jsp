@@ -35,9 +35,12 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 		</table>
+		<input type="submit"/>
+		
+		<!-- 
 		<a href="main" class="signIn">
 			<p>SIGN IN</p>
-		</a>
+		</a> -->
 	</form>
 	<div class="signInAgreement">
 			<p>By clicking Sign In, you agree to our License Agreement and have read and acknowledge our Privacy Statement.</p>

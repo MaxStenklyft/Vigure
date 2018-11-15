@@ -31,7 +31,7 @@
 	</div>
 	<p id = "mandatoryField">* denotes that the field is required</p>
 	${error }
-	<form method="post" action="${pageContext.request.contextPath }/login">
+	<form method="post" action="${pageContext.request.contextPath }/signup">
 		<table>
 			<tr>
 					<td>*Email:</td>
@@ -55,12 +55,16 @@
 			</tr>
 			<tr>
 				<td>Upload Profile Picture (Optional):</td>
-				<td><input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture></td>
+				<td><input id="image" type="file" name="profile_photo" placeholder="Photo" capture></td>
 			</tr>
 		</table>
+		
+		<input type="submit" />
+		<!-- 
 		<a href="main" class="signUp">
 			<p>CREATE ACCOUNT</p>
 		</a>
+		 -->
 	</form>
 	<div class="signUpAgreement">
 			<p>By clicking Create Account, you agree to our License Agreement and have read and acknowledge our Privacy Statement.</p>

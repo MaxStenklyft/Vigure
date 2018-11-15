@@ -17,9 +17,7 @@ body {
 }
 
 .mainHeader {
-    position: fixed;
-    top:0;
-    z-index: 1;
+    position: relative;
 	width: 100%;
 	height: 10%;
     background-color: #3A3B3F;
@@ -40,7 +38,6 @@ body {
     position: relative;
 	width: 100%;
 	height: 75%;
-	padding-top: 5%;
 	background-image: url("../images/mainPageBackground.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -61,6 +58,7 @@ body {
 	position: relative;
 	text-align: center;
 	display: inline-block;
+	font-weight: bold;
 }
 
 .createDebateRoom {
@@ -68,13 +66,12 @@ body {
 	width: 50%;
 	text-align: center;
 	display: inline-block;
-	padding-top: 5%;
+	padding-top: 3%;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
 	color: white;
 }
 
-/* Popup container */
 .popupDebateRoom {
 	position: relative;
 	width: 40%;
@@ -138,38 +135,17 @@ body {
 .createDebateButton {
 	position: relative;
 	width: 100%;
-	height: 14%;
+	height: 20%;
 	background-color: green;
 	text-align: center;
 	font-weight: bold;
 	font-family: 'Montserrat', sans-serif;
-	padding-top:2%;
+	color: white;
+	display: flex;
 }
 
-.createDebateButton a{
-    position: relative;
-	width: 30%;
-    height: 75%;
-}
-
-.createDebateButton a:link {
-    color: white;
-    text-decoration: none;
-}
-
-.createDebateButton a:hover  {
-    color: white;
-    text-decoration: underline;
-}
-
-.createDebateButton a:visited {
-    color: white;
-    text-decoration: none;
-}
-
-.createDebateButton a:active {
-    color: white;
-    text-decoration: none;
+.createDebateButton p {
+	margin: auto;
 }
 
 .invitations {
@@ -188,11 +164,15 @@ body {
 	width: 30%;
 	height: 100%;
 	font-family: 'Montserrat', sans-serif;
-	margin-top: 30px;
 	text-align: center;
 	float: left;
 	font-size: 140%;
 	font-weight: bold;
+	display: flex;
+}
+
+.invitationHeading p {
+	margin: auto;
 }
 
 .invitationFromUsers {
@@ -200,18 +180,20 @@ body {
 	width: 70%;
 	height: 100%;
 	float: right;
+	display: flex;
 }
 
 .userInvitation {
-width: 8vw;
-  height: 8vw;
+	position: relative;
+width: 6vw;
+  height: 6vw;
   border-radius: 50%;
   background: red;
-  margin-top: 10px;
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 120%;
+  margin: auto;
 }
 
 .userInvitation h1 {
@@ -219,7 +201,6 @@ width: 8vw;
 	width: 100%;
   height: 100%;
   text-align: center;
-  top: 20px;
 	}
 
 .userInvitation a:link {
@@ -237,7 +218,3 @@ width: 8vw;
 	text-decoration: none;
 }
 
-.userInvitation a:active {
-	color: white;
-	text-decoration: none;
-}
