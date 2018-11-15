@@ -1,5 +1,7 @@
 package com.cs506.vigure.db.dao;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -60,12 +62,43 @@ public class LoginDAOImpl implements LoginDAO {
 			}
 		}
 		
-		// store entry to login_model table in DB
-		LoginEntity currUserLogin = new LoginEntity(email, user, password);
-		//sessionFactory.getCurrentSession().save(currUserLogin);
-		currentSession.save(currUserLogin);
+		String hashedPassword = null;
 		
-		return true; // passes all checks the user can be registered!
+		try {
+			// begin password hashing
+			// Create MessageDigest instance for MD5
+	        MessageDigest md = MessageDigest.getInstance("MD5");
+	        //Add password bytes to digest
+	        md.update(password.getBytes());
+	        //Get the hash's bytes
+	        byte[] bytes = md.digest();
+	        //This bytes[] has bytes in decimal format;
+	        //Convert it to hexadecimal format
+	        StringBuilder sb = new StringBuilder();
+	        for(int i=0; i< bytes.length ;i++)
+	        {
+	            sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+	        }
+	        //Get complete hashed password in hex format
+	        hashedPassword = sb.toString();	
+	        password = null;
+		}
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+		
+		if(hashedPassword != null) { // if password hash was successful
+			// store entry to login_model table in DB
+			LoginEntity currUserLogin = new LoginEntity(email, user, hashedPassword);
+			//sessionFactory.getCurrentSession().save(currUserLogin);
+			currentSession.save(currUserLogin);
+			
+			return true; // passes all checks the user can be registered!
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
