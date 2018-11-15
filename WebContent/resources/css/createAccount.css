@@ -101,7 +101,7 @@ body {
 }
 
 #mandatoryField {
-	font-size: 10%;
+	font-size: 80%;
 	text-decoration: italics;
 }
 
@@ -131,7 +131,7 @@ body {
     border-color: #0077C5;
     color: white;
     font-size: 100%;
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .signUp p{
