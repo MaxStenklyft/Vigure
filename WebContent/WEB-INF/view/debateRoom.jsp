@@ -19,10 +19,18 @@
                     </div>
                     <div class="videoFeeds">
                     <div class="userVideo">
+                    	<video id="camera" autoplay playsinline></video>
+                    	<canvas id="photo"></canvas>
                     </div>
                     <div class="opponentVideo">
                     </div>
                 </div>
+                
+                <div id="buttons">
+    				<button id="snap">Snap</button><span> then </span><button id="send">Send</button>
+    				<span> or </span>
+    				<button id="snapAndSend">Snap &amp; Send</button>
+  				</div>
 
                 </div>
                 <div class="debateRoomSideBar">
@@ -46,6 +54,9 @@
                             <button onclick="location.href = 'main';">End Debate</button>
                     </div>
                 </div>
+           <script src="/socket.io/socket.io.js"></script>
+  		   <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  		   <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>     
     </div>
 </body>
 </html>
