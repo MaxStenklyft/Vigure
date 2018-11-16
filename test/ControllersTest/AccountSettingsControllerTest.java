@@ -9,6 +9,7 @@ import com.cs506.vigure.Controllers.HomeController;
 
 class AccountSettingsControllerTest {
 
+	
 	@Test
 	void testLoadUserSettings() {
 		// getting instance of a HomeController
@@ -19,7 +20,7 @@ class AccountSettingsControllerTest {
 				
 		assertEquals(redirect, "settings");	
 	}
-
+	
 	@Test
 	void testChangeUserSettings() {
 		fail("Not yet implemented");

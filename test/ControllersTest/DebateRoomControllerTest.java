@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import com.cs506.vigure.Controllers.DebateRoomController;
 
 class DebateRoomControllerTest {
-
+	
 	@Test
 	void testLoadDebatePage() {
 		DebateRoomController debRoomContrInstance = new DebateRoomController();
@@ -17,5 +17,5 @@ class DebateRoomControllerTest {
 		
 		assertEquals(redirect, "debateRoom");
 	}
-
+	
 }

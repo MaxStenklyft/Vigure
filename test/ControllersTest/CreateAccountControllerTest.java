@@ -5,7 +5,7 @@ import com.cs506.vigure.Controllers.CreateAccountController;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CreateAccountControllerTest {
-
+	
 	@Test
 	void testLoadLoginPage() {
 		CreateAccountController cac = new CreateAccountController();
@@ -14,4 +14,5 @@ public class CreateAccountControllerTest {
 		
 		assertEquals("createAccount", result);
 	}
+	
 }

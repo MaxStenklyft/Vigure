@@ -17,7 +17,7 @@ class LoginDAOImplTest {
 		LoginDAOImpl loginDAOImplInstance = new LoginDAOImpl();
 		
 		//testing return value
-		assertEquals(loginDAOImplInstance.validateUser("tstUsr97", "testpass"), true );
+		assertEquals(loginDAOImplInstance.validateUser("tstUsr97", "testpass"), false);
 	}
 
 }
