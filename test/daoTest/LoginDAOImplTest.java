@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import com.cs506.vigure.db.dao.LoginDAOImpl;
 
 class LoginDAOImplTest {
-
+	
 	@Test
 	void testRegister() {
 		//getting instance of LoginDAOImpl
@@ -28,7 +28,9 @@ class LoginDAOImplTest {
 		//test long password
 		assertEquals(loginDAOImplInstance.register("ThisIsNotATest@wisc.edu", "UniqueUserName", "Noooooooooooooooooooo"), false);
 	}
-
+	
+	
+	
 	@Test
 	void testValidateUser() {
 		//getting instance of LoginDAOImpl
@@ -38,6 +40,7 @@ class LoginDAOImplTest {
 		assertEquals(loginDAOImplInstance.validateUser("ThisIsNotATest", "ThisIsNotATest"), false);
 	}
 	
+	
 	@Test
 	void testGetUsernameID() {
 		//getting instance of LoginDAOImpl
@@ -46,5 +49,5 @@ class LoginDAOImplTest {
 		//test invalid userName
 		assertEquals(loginDAOImplInstance.getUsernameID("ThisIsNotATest"), -1);
 	}
-
+	
 }
