@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class MainControllerTest {
 
 	@Test
-	void testLoadHomePage() {
+	void testLoadMainPage() {
 		fail("Not yet implemented");
 	}
 
