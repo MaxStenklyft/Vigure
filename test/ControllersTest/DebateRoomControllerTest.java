@@ -14,6 +14,8 @@ class DebateRoomControllerTest {
 		
 		String redirect = dbRoom.loadDebatePage();
 		assertEquals(redirect, "debateRoom");
+		
+		
 	}
 
 }
