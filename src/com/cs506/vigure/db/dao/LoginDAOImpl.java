@@ -30,15 +30,11 @@ public class LoginDAOImpl implements LoginDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	private Session getCurrSesh() {
-		return sessionFactory.getCurrentSession();
-	}
-	
 	@Override
 	@Transactional
 	public boolean register(String email, String user, String password) {
 		//Session currentSession = sessionFactory.getCurrentSession();
-		Session currentSession = getCurrSesh();
+		Session currentSession = sessionFactory.getCurrentSession();
 		
 		String sql = "from LoginEntity where userName='" + user + "'";
 		
@@ -75,7 +71,7 @@ public class LoginDAOImpl implements LoginDAO {
 	        //This bytes[] has bytes in decimal format;
 	        //Convert it to hexadecimal format
 	        StringBuilder sb = new StringBuilder();
-	        for(int i=0; i< bytes.length ;i++)
+	        for(int i=0; i < bytes.length ;i++)
 	        {
 	            sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
 	        }
@@ -125,7 +121,7 @@ public class LoginDAOImpl implements LoginDAO {
 	@Transactional
 	public int getUsernameID(String user) {
 		//Session currentSession = sessionFactory.getCurrentSession();
-		Session currentSession = getCurrSesh();
+		Session currentSession = sessionFactory.getCurrentSession();
 		
 		String sql = "from LoginEntity where userName='" + user + "'";
 		
@@ -133,7 +129,13 @@ public class LoginDAOImpl implements LoginDAO {
 		
 		List<LoginEntity> logins = loginQuery.getResultList();
 		
-		return logins.get(0).getId();		
+		if (logins.get(0) != null) {
+			return logins.get(0).getId();
+		}
+		
+		else {
+			return -1;
+		}
 	}
 
 }
