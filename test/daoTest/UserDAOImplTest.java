@@ -26,4 +26,5 @@ public class UserDAOImplTest {
 		UserDAOImpl userDAOImplInstance = new UserDAOImpl();
 		assertEquals(userDAOImplInstance.searchForEntityById(-1), null);
 	}
+	
 }
