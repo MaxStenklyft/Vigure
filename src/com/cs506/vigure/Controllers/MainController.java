@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 
 import com.cs506.vigure.db.dao.DebateDAO;
 import com.cs506.vigure.db.dao.LoginDAO;
+import com.cs506.vigure.db.dao.UserDAO;
 import com.cs506.vigure.db.entity.DebateEntity;
 import com.cs506.vigure.db.entity.UserEntity;
 
@@ -39,13 +40,24 @@ public class MainController {
 	// injecting DAO for DB access
 	@Autowired
 	private DebateDAO debateDao;
+	
+	// injecting DAO for DB access
+	@Autowired
+	private UserDAO userDao;
 
 	@Transactional
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView loadMainPage(UserEntity user, HttpSession currSession) {
+	public ModelAndView loadMainPage(HttpSession currSession) {
 		// TODO
-		//UserEntity user = (UserEntity) mav.getModelMap().get("user");
-		ModelAndView mav = new ModelAndView("main");
+		UserEntity user = userDao.searchForEntityById((long)currSession.getAttribute("userID"));
+		ModelAndView mav;
+		if(user == null) {
+			mav = new ModelAndView("login");
+			return mav;
+		}
+		else {
+			mav = new ModelAndView("main");
+		}
 		List<DebateEntity> debates = debateDao.getUsersDebates(user.getId());
 		mav.addObject("debates", debates);
 		mav.addObject("user", user);

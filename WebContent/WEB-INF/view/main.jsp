@@ -24,6 +24,13 @@
                         </table>
                     </form>
                 </div>
+                <div class="">
+                	<table>
+                                <tr>
+                                	${errors}
+                                </tr>
+                    </table>
+                </div>
                 <div class="createDebateRoom">
                         <div class="popupDebateRoom" onclick="popupDebateRoom()">Create Debate Room
                         </div>
