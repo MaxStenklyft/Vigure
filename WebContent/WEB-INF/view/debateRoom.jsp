@@ -19,10 +19,10 @@
                     </div>
                     <div class="videoFeeds">
                     <div class="userVideo">
-                    	<video id="camera" autoplay playsinline></video>
-                    	<canvas id="photo"></canvas>
+                    	<video id="vid1" autoplay playsinline></video>
                     </div>
                     <div class="opponentVideo">
+                    	<video id="vid2" autoplay playsinline></video>
                     </div>
                 </div>
                 
@@ -54,7 +54,7 @@
                             <button onclick="location.href = 'main';">End Debate</button>
                     </div>
                 </div>
-           <script src="/socket.io/socket.io.js"></script>
+           
   		   <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
   		   <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>     
     </div>
