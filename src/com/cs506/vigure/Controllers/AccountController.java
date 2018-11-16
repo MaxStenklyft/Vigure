@@ -45,7 +45,7 @@ public class AccountController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView login(
+	public String login(
 		@RequestParam("username") String username,
 		@RequestParam("password") String password,
 		HttpSession session) {
@@ -56,17 +56,16 @@ public class AccountController {
 		if(hashedPassword != null && loginDAO.validateUser(username, hashedPassword)) {
 			long currUserID = loginDAO.getUsernameID(username);
 			session.setAttribute("userID", currUserID);
-
+			
 			UserEntity user = userDAO.searchForEntityById(currUserID);
 			ModelAndView mav = new ModelAndView("main");
 			List<DebateEntity> debates = debateDao.getUsersDebates(user.getId());
 			mav.addObject("debates", debates);
 			mav.addObject("user", user);
-			return mav;
+			return "redirect:/main";
 		}
 		else {
-			ModelAndView mav = new ModelAndView("loginSignUp");
-			return mav;
+			return "loginSignUp";
 		}
 		
 	}
