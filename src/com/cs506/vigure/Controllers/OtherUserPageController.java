@@ -20,9 +20,15 @@ public class OtherUserPageController {
 	private UserDAO userDAO;
 	
 	@RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
-	public ModelAndView loadUserPage( @PathVariable("username") long username) {
-		ModelAndView mav = new ModelAndView("other");
-		
+	public ModelAndView loadUserPage( @PathVariable("username") String username) {
+		ModelAndView mav = new ModelAndView("otherUser");
+		UserEntity user = userDAO.searchForEntityByUserName(username);
+		if(user == null) {
+			return new ModelAndView("pageNotFound");
+		}
+		else {
+			mav.addObject("otherUser", user);
+		}
 		return mav;
 	}
 	

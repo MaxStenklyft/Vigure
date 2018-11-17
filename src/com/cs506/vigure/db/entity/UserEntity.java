@@ -34,12 +34,7 @@ public class UserEntity { // this represents the user_model table in db
 	
 	@Column(name="categoricalInterest")
 	private String categoricalInterest;
-	
-	@Column(name="previousDebates")
-	private ArrayList<Long> previousDebates;
-	
-	@Column(name="upcomingDebates")
-	private ArrayList<Long> upcomingDebates;
+
 
 	public UserEntity(int id, String username, String bio, String coi) {
 		this.id = id;
@@ -106,19 +101,4 @@ public class UserEntity { // this represents the user_model table in db
 		this.categoricalInterest = categoricalInterest;
 	}
 
-	public ArrayList<Long> getPreviousDebates() {
-		return previousDebates;
-	}
-
-	public void setPreviousDebates(ArrayList<Long> previousDebates) {
-		this.previousDebates = previousDebates;
-	}
-
-	public ArrayList<Long> getUpcomingDebates() {
-		return upcomingDebates;
-	}
-
-	public void setUpcomingDebates(ArrayList<Long> upcomingDebates) {
-		this.upcomingDebates = upcomingDebates;
-	}
 }

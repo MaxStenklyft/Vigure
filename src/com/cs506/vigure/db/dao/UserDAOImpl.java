@@ -54,6 +54,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
+	@Transactional
 	public UserEntity searchForEntityByUserName(String userName) {
 
 		Session currentSession = sessionFactory.getCurrentSession();
