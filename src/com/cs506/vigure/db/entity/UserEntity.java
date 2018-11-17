@@ -35,7 +35,6 @@ public class UserEntity { // this represents the user_model table in db
 	@Column(name="categoricalInterest")
 	private String categoricalInterest;
 
-
 	public UserEntity(int id, String username, String bio, String coi) {
 		this.id = id;
 		this.userName = username;
