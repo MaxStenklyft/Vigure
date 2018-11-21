@@ -1,0 +1,118 @@
+* {
+	margin: 0 0;
+	padding: 0 0;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.otherUserPage {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.otherUserHeader {
+    position: fixed;
+    top:0;
+    z-index: 1;
+	width: 100%;
+	height: 10%;
+    background-color: #3A3B3F;
+}
+
+.mainPage {
+	position: relative;
+	height: 10vh;
+	width: 10vh;
+	background-image: url("../images/home.png");
+    background-repeat: no-repeat;
+	background-size: 80% 80%;
+	float: right;
+	margin-right: 10px;
+}
+
+.otherUser {
+    position: relative;
+	width: 100%;
+	height: 90%;
+    top: 10%;
+    background-color: lightgray;
+	text-align: center;
+}
+
+.otherUserPicBio {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.userPic {
+	position: relative;
+	width: 100%;
+	height: 50%;
+	display: flex;
+}
+
+.userPic img{
+	position: relative;
+	width: 35%;
+	margin: auto;
+}
+
+.userBio {
+    position: relative;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.userBio p{
+    margin: auto
+}
+
+
+.otherUserDetails {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	float: right;
+	display: flex;    	
+}
+
+.otherUserDetailsFormTable {
+	position: relative;
+	width: 80%;
+	height: 80%;
+	margin: auto;
+	background-color: white;
+	text-align: center;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid black;
+	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.otherUserDetailsFormTable form {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.otherUserDetailsFormTable table {
+	position: relative;
+	width: 96%;
+	height: 100%;
+	text-align: center;
+	font-weight: bold;
+    font-size: 100%;
+}
+
