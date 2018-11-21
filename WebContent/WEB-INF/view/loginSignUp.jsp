@@ -35,7 +35,7 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 		</table>
-		<input type="submit"/>
+		<input class="signIn" type="submit" value="SIGN IN"/>
 		
 		<!-- 
 		<a href="main" class="signIn">
