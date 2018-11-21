@@ -11,7 +11,7 @@
         <div class="notFoundtext">
         <h1>User Not Found <br>
         Please Don't Stare</h1>
-        <a href="main">Go Back</a>
+        <a href="../main">Go Back</a>
         </div>
     </div>
 </body>

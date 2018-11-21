@@ -15,7 +15,7 @@
             </div>
             <div class="createAndSearch">
                 <div class="searchUsers">
-                    <form>
+                    <form method="post" action="${pageContext.request.contextPath }/main/searchUsers">
                         <table>
                                 <tr>
                                     <td>Search Users: </td>

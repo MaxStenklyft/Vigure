@@ -63,6 +63,14 @@ public class MainController {
 		mav.addObject("user", user);
 		return mav;
 	}
+
+	@RequestMapping(value = "/searchUsers", method = RequestMethod.POST)
+	public String searchUsers(
+		@RequestParam("users") String users,
+		HttpSession session) {
+		
+		return "redirect:/user/"+users;		
+	}
 	
 	@Transactional
 	@RequestMapping(value = "/sendDebateRequest", method = RequestMethod.POST)
