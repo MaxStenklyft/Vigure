@@ -127,15 +127,9 @@ body {
     height: 9%;
     background-color: #0077C5;
     border-radius: 3px;
-    display: flex;    
     border-color: #0077C5;
     color: white;
-    font-size: 100%;
-	text-decoration: none;
-}
-
-.signUp p{
-    margin: auto;
+	font-size: 100%;
 }
 
 .signUpAgreement {

@@ -36,11 +36,6 @@
 			</tr>
 		</table>
 		<input class="signIn" type="submit" value="SIGN IN"/>
-		
-		<!-- 
-		<a href="main" class="signIn">
-			<p>SIGN IN</p>
-		</a> -->
 	</form>
 	<div class="signInAgreement">
 			<p>By clicking Sign In, you agree to our License Agreement and have read and acknowledge our Privacy Statement.</p>

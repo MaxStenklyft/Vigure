@@ -59,13 +59,7 @@
 				<td><input id="image" type="file" name="profile_photo" placeholder="Photo" capture></td>
 			</tr>
 		</table>
-		
-		<input type="submit" />
-		<!-- 
-		<a href="main" class="signUp">
-			<p>CREATE ACCOUNT</p>
-		</a>
-		 -->
+		<input class="signUp" type="submit" value="CREATE ACCOUNT"/>
 	</form>
 	<div class="signUpAgreement">
 			<p>By clicking Create Account, you agree to our License Agreement and have read and acknowledge our Privacy Statement.</p>
