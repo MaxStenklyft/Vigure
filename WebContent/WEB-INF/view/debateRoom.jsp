@@ -19,6 +19,20 @@
                 </div>
                 <div class="videoFeeds">
                 <div class="userVideo">
+                	<video id="localVideo" autoplay/>
+				    <script>
+				      window.addEventListener("load", function (evt) {
+				        navigator.getUserMedia({ audio: false, video: true},
+				          function(stream) {
+				            var video = document.getElementById('localVideo');
+				            video.src = window.URL.createObjectURL(stream);
+				          },
+				          function(err) {
+				            console.log("The following error occurred: " + err.name);
+				          }
+				        );
+				      });
+				    </script>
                 </div>
                 <div class="opponentVideo">
                 </div>
