@@ -25,7 +25,7 @@
                                     <td><input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture></td>
                                 </tr>
                                 <tr>
-                                        <td>Brief Biography:</td>
+                                        <td>Brief Biography: ${id.bio}</td>
                                         <td><input type="text" name="bio"></td>
                                     </tr>
                             </table>
@@ -41,7 +41,7 @@
                                         <td><input type="text" name="email"></td>
                                     </tr>
                                     <tr>
-                                        <td>Username:</td>
+                                        <td>Username: ${id.userName}</td>
                                         <td><input type="text" name="username"></td>
                                     </tr>
                                     <tr>
@@ -49,7 +49,7 @@
                                         <td><input type="password" name="password"></td>
                                     </tr>
                                     <tr>
-                                        <td>Categories of Interest (comma seperated):</td>
+                                        <td>Categories of Interest (comma seperated): ${id.categoricalInterest}</td>
                                         <td><input type="text" name="COI"></td>
                                     </tr>
                                 </table>
