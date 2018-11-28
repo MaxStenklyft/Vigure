@@ -43,6 +43,21 @@ body {
     top: 10%;
     background-color: lightgray;
 	text-align: center;
+	display: flex;    	
+}
+
+.settingsForm {
+	position: relative;
+	width: 96%;
+	height: 96%;
+	float: right;
+	display: flex;
+	margin: auto;
+	background-color: white;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid black;
 }
 
 .settingsPicBio {
@@ -50,6 +65,10 @@ body {
 	width: 50%;
 	height: 100%;
 	float: left;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border-right: 1px solid black;
 }
 
 .profilePic {
@@ -81,25 +100,12 @@ body {
     font-size: 100%;
 }
 
-.settingsForm {
-	position: relative;
-	width: 50%;
-	height: 100%;
-	float: right;
-	display: flex;    	
-}
-
 .settingsFormTable {
 	position: relative;
 	width: 80%;
 	height: 80%;
 	margin: auto;
-	background-color: white;
 	text-align: center;
-	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	border: 1px solid black;
 	display: inline-block;
 	font-family: 'Montserrat', sans-serif;
 }
