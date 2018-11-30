@@ -79,4 +79,9 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	@Override
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 }
