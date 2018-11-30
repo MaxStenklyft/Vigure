@@ -137,9 +137,5 @@ public class LoginDAOImpl implements LoginDAO {
 			return -1;
 		}
 	}
-	
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
 
 }

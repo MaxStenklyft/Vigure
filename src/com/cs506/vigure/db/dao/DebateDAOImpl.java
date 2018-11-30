@@ -55,11 +55,6 @@ public class DebateDAOImpl implements DebateDAO {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
 	
 
 }

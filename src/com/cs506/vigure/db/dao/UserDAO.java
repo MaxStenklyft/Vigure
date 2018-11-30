@@ -1,7 +1,5 @@
 package com.cs506.vigure.db.dao;
 
-import org.hibernate.SessionFactory;
-
 import com.cs506.vigure.db.entity.UserEntity;
 
 public interface UserDAO {
@@ -18,7 +16,5 @@ public interface UserDAO {
 	UserEntity searchForEntityByUserName(String userName);
 	
 	UserEntity searchForEntityById(long input);
-	
-	void setSessionFactory(SessionFactory sessionFactory);
 	
 }

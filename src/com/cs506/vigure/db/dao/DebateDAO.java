@@ -2,8 +2,6 @@ package com.cs506.vigure.db.dao;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
-
 import com.cs506.vigure.db.entity.DebateEntity;
 import com.cs506.vigure.db.entity.UserEntity;
 
@@ -16,6 +14,4 @@ public interface DebateDAO {
 	List<DebateEntity> getUsersDebates(long userId);
 	 
 	void updateDebateStatus(DebateStatusEnum status, int debateID);
-	
-	void setSessionFactory(SessionFactory sessionFactory);
 }
