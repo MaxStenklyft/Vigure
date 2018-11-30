@@ -1,5 +1,9 @@
 package com.cs506.vigure.db.dao;
 
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
+
 import com.cs506.vigure.db.entity.UserEntity;
 
 public interface UserDAO {
@@ -16,5 +20,9 @@ public interface UserDAO {
 	UserEntity searchForEntityByUserName(String userName);
 	
 	UserEntity searchForEntityById(long input);
+	
+	public void updateUserSettings(
+			String username, long ID, 
+			String cat_interests);
 	
 }
