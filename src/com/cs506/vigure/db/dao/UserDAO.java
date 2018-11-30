@@ -1,8 +1,7 @@
 package com.cs506.vigure.db.dao;
 
 import org.hibernate.SessionFactory;
-import javax.servlet.http.HttpSession;
-import org.hibernate.Session;
+
 import com.cs506.vigure.db.entity.UserEntity;
 
 public interface UserDAO {
@@ -20,7 +19,6 @@ public interface UserDAO {
 	
 	UserEntity searchForEntityById(long input);
 	
-	void updateUserSettings(String username, long ID, String cat_interests);
-
 	void setSessionFactory(SessionFactory sessionFactory);
+	
 }

@@ -2,7 +2,6 @@ package com.cs506.vigure.db.dao;
 
 import java.util.List;
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -17,7 +16,6 @@ public class UserDAOImpl implements UserDAO {
 	// inject session factory
 	@Autowired
 	private SessionFactory sessionFactory;
-	
 	
 	@Override
 	@Transactional
@@ -52,7 +50,7 @@ public class UserDAOImpl implements UserDAO {
 			//TODO Error
 			return null;
 		}
-		
+
 	}
 
 	@Override
@@ -65,6 +63,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		Query<UserEntity> userQuery = currentSession.createQuery(sql, UserEntity.class);
 		List<UserEntity> users = userQuery.getResultList();
+		
 		if (users.size() == 1) {
 			return users.get(0);
 		}
@@ -79,23 +78,6 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 	}
-	
-
-	@Override
-	@Transactional
-	public void updateUserSettings(
-			String username, long ID, 
-			String cat_interests) {
-		
-		Session currentSession = sessionFactory.getCurrentSession();
-		Query<UserEntity> query = currentSession.createQuery(
-				"update LoginEntity set userName =:username where ID = :ID");
-		query.setString("username", username);
-		query.setLong("ID", ID);
-        query.executeUpdate();
-		
-	}
-	
 
 	@Override
 	public void setSessionFactory(SessionFactory sessionFactory) {
