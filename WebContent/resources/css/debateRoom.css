@@ -68,9 +68,14 @@ body {
 	position: relative;
 	width: 30%;
 	height: 90%;
-	background-color: black;
 	display: inline-block;
 	margin-right: 20px;
+}
+
+#localVideo {
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .opponentVideo {
@@ -187,5 +192,25 @@ body {
 	margin: auto;
 	border-radius: 3px;
 	font-weight: bold;
+}
+
+#countdownToDebate {
+	position: relative;
+	left:5px;
+ 	bottom:20px;
+ 	height:30px;
+   	width:100%;
+   	background-color: lightgray;
+   	font-family: 'Montserrat', sans-serif;
+}
+
+#roundCountdown {
+	position: absolute;
+	left:5px;
+ 	bottom:20px;
+ 	height:30px;
+   	width:100%;
+   	background-color: lightgray;
+   	font-family: 'Montserrat', sans-serif;
 }
 
