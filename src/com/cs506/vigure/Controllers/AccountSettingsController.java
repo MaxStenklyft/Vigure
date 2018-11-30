@@ -2,29 +2,39 @@ package com.cs506.vigure.Controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cs506.vigure.db.dao.LoginDAOImpl;
 import com.cs506.vigure.db.dao.UserDAO;
+import com.cs506.vigure.db.dao.UserDAOImpl;
 import com.cs506.vigure.db.entity.UserEntity;
 
 @Controller
 @RequestMapping("/settings")
 public class AccountSettingsController {
 	
-	// injecting DAO for DB access
+		// injecting DAO for DB access
 		@Autowired
 		private UserDAO userDAO;
+		
+		// Current user
+		private UserEntity id;
+		// Current userID
+		private long ID;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView loadUserSettingsPage(HttpSession currSession) {
-		
+		ID = (long)currSession.getAttribute("userID");
 		ModelAndView mv = new ModelAndView("settings");
-		UserEntity id = userDAO.searchForEntityById((long)currSession.getAttribute("userID"));
-		
+		id = userDAO.searchForEntityById(ID);
 		
 		
 		if(id == null) {
@@ -32,17 +42,18 @@ public class AccountSettingsController {
 		}
 		else {
 			mv.addObject("id", id);
-			/*mv.addObject("firstName", id.getFirstName());
-			mv.addObject("lastName", id.getLastName());
-			mv.addObject("userName", id.getUserName());
-			mv.addObject("interests", id.getCategoricalInterest());
-			*/
 			
 		}
 		return mv;
 	}
-	
-	public void changeUserSettings() {
-		//TODO
+
+	@RequestMapping(value = "/updateSettings" , method = RequestMethod.POST)
+	public void changeUserSettings(
+			@RequestParam("username") String username,
+			@RequestParam("password") String password,
+			@RequestParam("COI") String cat_interests, HttpSession session) {
+		
+		userDAO.updateUserSettings(username, ID, cat_interests);
+
 	}
 }
