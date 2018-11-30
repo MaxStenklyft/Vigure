@@ -95,6 +95,12 @@ public class UserDAOImpl implements UserDAO {
         query.executeUpdate();
 		
 	}
+
+	@Override
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+		
+	}
 	
 
 }

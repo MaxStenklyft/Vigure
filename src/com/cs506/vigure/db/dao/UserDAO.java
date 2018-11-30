@@ -3,6 +3,7 @@ package com.cs506.vigure.db.dao;
 import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import com.cs506.vigure.db.entity.UserEntity;
 
@@ -25,4 +26,5 @@ public interface UserDAO {
 			String username, long ID, 
 			String cat_interests);
 	
+	void setSessionFactory(SessionFactory sessionFactory);
 }

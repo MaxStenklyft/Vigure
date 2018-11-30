@@ -56,5 +56,9 @@ public class DebateDAOImpl implements DebateDAO {
 		
 	}
 	
-
+	@Override
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+		
+	}
 }

@@ -1,5 +1,7 @@
 package com.cs506.vigure.db.dao;
 
+import org.hibernate.SessionFactory;
+
 import com.cs506.vigure.db.entity.LoginEntity;
 
 public interface LoginDAO {
@@ -8,4 +10,6 @@ public interface LoginDAO {
 	 boolean validateUser(String user, String password);
 	 
 	 int getUsernameID(String user);
+	 
+	 void setSessionFactory(SessionFactory sessionFactory);
 }

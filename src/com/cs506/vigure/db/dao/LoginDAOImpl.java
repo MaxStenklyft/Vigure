@@ -137,5 +137,11 @@ public class LoginDAOImpl implements LoginDAO {
 			return -1;
 		}
 	}
+	
+	@Override
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+		
+	}
 
 }
