@@ -194,3 +194,23 @@ body {
 	font-weight: bold;
 }
 
+#countdownToDebate {
+	position: relative;
+	left:5px;
+ 	bottom:20px;
+ 	height:30px;
+   	width:100%;
+   	background-color: lightgray;
+   	font-family: 'Montserrat', sans-serif;
+}
+
+#roundCountdown {
+	position: absolute;
+	left:5px;
+ 	bottom:20px;
+ 	height:30px;
+   	width:100%;
+   	background-color: lightgray;
+   	font-family: 'Montserrat', sans-serif;
+}
+
