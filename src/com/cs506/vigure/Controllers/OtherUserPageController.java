@@ -1,5 +1,7 @@
 package com.cs506.vigure.Controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +22,9 @@ public class OtherUserPageController {
 	private UserDAO userDAO;
 	
 	@RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
-	public ModelAndView loadUserPage( @PathVariable("username") String username) {
+	public ModelAndView loadUserPage( @PathVariable("username") String username,
+			HttpSession currSession) {
+		if(!validate(currSession)) return new ModelAndView("loginSignUp");
 		ModelAndView mav = new ModelAndView("otherUser");
 		UserEntity user = userDAO.searchForEntityByUserName(username);
 		if(user == null) {
@@ -38,5 +42,14 @@ public class OtherUserPageController {
 	
 	public void sendDebateRequest() {
 		//TODO
+	}
+	public boolean validate(HttpSession session) {
+		if(session.getAttribute("userID") == null) return false;
+		
+		UserEntity user = userDAO.searchForEntityById((long)session.getAttribute("userID"));
+		if(user == null) {
+			return false;
+		}
+		return true;
 	}
 }
