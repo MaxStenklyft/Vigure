@@ -73,6 +73,13 @@ body {
 	margin-right: 20px;
 }
 
+
+#localVideo {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
 .opponentVideo {
 	position: relative;
 	width: 30%;
@@ -88,6 +95,18 @@ body {
 	height: 90%;
 	text-align: center;
 	float: right;
+}
+
+.debateRoomLeftSide {
+	position: relative;
+	width: 10%;
+	height: 100%;
+	bottom: 40px;
+	text-align: center;
+	float: left;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
 }
 
 .debateDescription {
@@ -189,3 +208,31 @@ body {
 	font-weight: bold;
 }
 
+.timers {
+	position: relative;
+	width: 100%;
+	height: 80%;
+	background-color: lightgray;
+	text-align: center;
+}
+
+#roundCountdown {
+	left:130px;
+ 	bottom:20px;
+ 	position: relative;
+	width: 30%;
+	height: 90%;
+   	background-color: lightgray;
+   	font-family: 'Montserrat', sans-serif;
+}
+
+#whichTurn {
+	left:-125px;
+ 	bottom:300px;
+ 	position: relative;
+	width: 30%;
+	height: 90%;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}

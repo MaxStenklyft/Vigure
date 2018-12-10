@@ -5,9 +5,11 @@
 <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="${pageContext.request.contextPath}/resources/js/popup.js"></script>
-<title>Vigure: c</title>
+<title>Vigure: </title>
 </head>
 <body>
+	<input type="hidden" id="debateRounds" value="${debate.rounds}"/>
+	<input type="hidden" id="debateRoomRoundTime" value="${debate.timeInterval}"/>
     <div class="debateRoomPage">
             <div class="debateRoomHeader">
                     <a href="\Vigure\settings"><div class="accountMain">
@@ -66,6 +68,51 @@
                             <button>End Debate</button>
                         </a>
                     </div>
+                    <div class = "timers">
+    					<p id="roundCountdown">
+    					Time left in round: 
+    					<script type="text/javascript">
+    						var timeleft = document.getElementById("debateRoomRoundTime").value * 60;
+    						var downloadTimer = setInterval(function(){
+    						var current = timeleft - 1;
+      						document.getElementById("roundCountdown").innerHTML = "Time left in round: " + current;
+      						if(timeleft <= 0) {
+      							document.getElementById("roundCountdown").innerHTML = "Round Finished!";
+      							rounds = rounds - 1;
+      							timeleft = document.getElementById("debateRoomRoundTime").value * 60;
+      							
+      							if(rounds % 2 == 0)
+      		                		document.getElementById("whichTurn").innerHTML = "WHOSE TURN? INSTIGATOR";
+      		                	else
+      		                		document.getElementById("whichTurn").innerHTML = "WHOSE TURN? DEFENDANT";
+      						}
+      						if(rounds == 0) {
+      							document.getElementById("whichTurn").innerHTML = "WHOSE TURN? NOBODY'S";
+      							document.getElementById("roundCountdown").innerHTML = "Debate Finished!";
+  								return;
+    						}
+    						timeleft = timeleft - 1;
+    						},1000);
+    					</script>
+    					</p>
+    				</div>
+                    
+                </div>
+                <div class="debateRoomLeftSide">
+                	<div class="role1"><p>DEFENDANT: Top</p></div>
+                	<div class="role1"><p>INSTIGATOR: Bottom</p></div>
+                </div>
+                <div class="whoseTurn">
+                	<p id="whichTurn">
+                	WHOSE TURN? "
+                	<script type="text/javascript">
+                	var rounds = document.getElementById("debateRounds").value * 2;
+                	if(rounds % 2 == 0)
+                		document.getElementById("whichTurn").innerHTML = "WHOSE TURN? INSTIGATOR";
+                	else
+                		document.getElementById("whichTurn").innerHTML = "WHOSE TURN? DEFENDANT";
+                	</script>
+                	</p>
                 </div>
     </div>
 </body>
