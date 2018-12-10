@@ -1,0 +1,10 @@
+AbstractTextEditor.Color.Background=16,30,21
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+TextOccurrenceIndicationColor=27, 98, 145
+eclipse.preferences.version=1
+fullcoverage_color=6,74,6
+nocoverage_color=98,5,5
+overviewRuler_migration=migrated_3.1
+partialcoverage_color=98,98,0

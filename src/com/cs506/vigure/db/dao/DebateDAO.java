@@ -18,4 +18,6 @@ public interface DebateDAO {
 	void updateDebateStatus(DebateStatusEnum status, int debateID);
 	
 	void setSessionFactory(SessionFactory sessionFactory);
+
+	DebateEntity getDebate(long debateId);
 }
