@@ -66,9 +66,13 @@ public class DebateDAOImpl implements DebateDAO {
 
 
 	@Override
-	public void updateDebateStatus(DebateStatusEnum status, int debateID) {
-		// TODO Auto-generated method stub
-		
+	@Transactional
+	public void updateDebateStatus(DebateStatusEnum status, long debateID) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<DebateEntity> query1 = currentSession.createQuery("update DebateEntity set status =:status where ID = :ID");
+		query1.setInteger("status", 2);
+		query1.setLong("ID", debateID);
+        query1.executeUpdate();
 	}
 
 	@Override

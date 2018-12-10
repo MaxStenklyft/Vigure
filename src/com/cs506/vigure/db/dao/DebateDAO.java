@@ -15,7 +15,7 @@ public interface DebateDAO {
 	
 	List<DebateEntity> getUsersDebates(long userId);
 	 
-	void updateDebateStatus(DebateStatusEnum status, int debateID);
+	void updateDebateStatus(DebateStatusEnum status, long l);
 	
 	void setSessionFactory(SessionFactory sessionFactory);
 

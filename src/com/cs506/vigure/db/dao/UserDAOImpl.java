@@ -107,6 +107,9 @@ public class UserDAOImpl implements UserDAO {
 		query3.setString("bio", bio);
 		query3.setLong("ID", ID);
         query3.executeUpdate();
+        
+	}
+	
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 

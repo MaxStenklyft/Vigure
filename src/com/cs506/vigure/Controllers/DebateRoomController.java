@@ -15,6 +15,8 @@ import com.cs506.vigure.db.dao.UserDAO;
 import com.cs506.vigure.db.entity.DebateEntity;
 import com.cs506.vigure.db.entity.UserEntity;
 
+import Enums.DebateStatusEnum;
+
 @Controller
 public class DebateRoomController {
 	
@@ -37,7 +39,7 @@ public class DebateRoomController {
 		//validate logged in  user has right to access debate
 		if(!validateRoom(currSession, debate)) return new ModelAndView("redirect:/main");
 		
-		
+		debateDAO.updateDebateStatus(DebateStatusEnum.RETIRED, debate.getId());
 		ModelAndView mav = new ModelAndView("debateRoom");
 		mav.addObject("debate", debate);
 		return mav;

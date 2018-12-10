@@ -28,8 +28,6 @@
                                         <td>Brief Biography:</td>
 
                                         <td><input type="text" name="bio" value="${id.bio}"></td>
-                                        <td><input type="text" name="bio"></td>
-
                                     </tr>
                             </table>
                         
@@ -43,16 +41,7 @@
 
                                         <td>Username:</td>
                                         <td><input type="text" name="username" value="${id.userName}"></td>
-
-                                        <td>Email:</td>
-                                        <td><input type="text" name="email"></td>
                                     </tr>
-                                    <tr>
-                                        <td>Username:</td>
-                                        <td><input type="text" name="username"></td>
-
-                                    </tr>
-                                    
                                     <tr>
                                         <td>Password:</td>
                                         <td><input type="password" name="password"></td>
@@ -62,8 +51,6 @@
                                         <td>Categories of Interest (comma seperated):</td>
 
                                         <td><input type="text" name="COI" value="${id.categoricalInterest}"></td>
-
-                                        <td><input type="text" name="COI"></td>
 
                                     </tr>
                                 </table>
