@@ -18,44 +18,56 @@
                     <div class="profilePic">
                             <img src="resources/images/account.png" alt="profilePic">
                     </div>
-                        <form method="post" action="${pageContext.request.contextPath }/signup">
+                        <form method="post" action="${pageContext.request.contextPath }/settings/updateSettings">
                             <table>
                                 <tr>
                                     <td>Change Profile Picture:</td>
-                                    <td><input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture></td>
+                                    <td><input id="image" type="file" name="profile_photo" placeholder="Photo" ></td>
                                 </tr>
                                 <tr>
                                         <td>Brief Biography:</td>
+
+                                        <td><input type="text" name="bio" value="${id.bio}"></td>
                                         <td><input type="text" name="bio"></td>
+
                                     </tr>
                             </table>
-                        </form>
+                        
                 </div>
                     <div class="settingsForm">
                         <div class="settingsFormTable">
                             ${error }
-                            <form method="post" action="${pageContext.request.contextPath }/login">
+                            
                                 <table>
                                     <tr>
+
+                                        <td>Username:</td>
+                                        <td><input type="text" name="username" value="${id.userName}"></td>
+
                                         <td>Email:</td>
                                         <td><input type="text" name="email"></td>
                                     </tr>
                                     <tr>
                                         <td>Username:</td>
                                         <td><input type="text" name="username"></td>
+
                                     </tr>
+                                    
                                     <tr>
                                         <td>Password:</td>
                                         <td><input type="password" name="password"></td>
                                     </tr>
+                                    
                                     <tr>
                                         <td>Categories of Interest (comma seperated):</td>
+
+                                        <td><input type="text" name="COI" value="${id.categoricalInterest}"></td>
+
                                         <td><input type="text" name="COI"></td>
+
                                     </tr>
                                 </table>
-                                <a href="settings" class="updateButton">
-                                    <p>Update Account</p>
-                                </a>
+                                <input type="submit" value = "update"/>
                             </form>
                         </div>
                     </div>

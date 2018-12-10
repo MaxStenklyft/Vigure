@@ -19,6 +19,12 @@ public interface UserDAO {
 	
 	UserEntity searchForEntityById(long input);
 	
+
+	public void updateUserSettings(
+			String username, long ID, 
+			String cat_interests, String bio);
+
 	void setSessionFactory(SessionFactory sessionFactory);
+
 	
 }

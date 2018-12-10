@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cs506.vigure.db.entity.LoginEntity;
+import com.cs506.vigure.db.entity.UserEntity;
 
 @Repository
 public class LoginDAOImpl implements LoginDAO {
@@ -143,5 +144,6 @@ public class LoginDAOImpl implements LoginDAO {
 		this.sessionFactory = sessionFactory;
 		
 	}
+
 
 }
