@@ -77,11 +77,20 @@
 
                 <div class="invitationFromUsers">
                         <c:forEach items="${debates}" var="debate">
-                                <div class="userInvitation">
+                        	<c:choose>
+							    <c:when test="${debate.status =='0'}">
+							        <div class="userInvitation">
                                         <a href="debateRoom/${debate.id}">
                                             <h1><c:out value="${debate.title}"/></h1>
                                         </a>
-                                </div>
+                                	</div>
+							    </c:when>    
+							    <c:otherwise>
+							        <div class="userInvitation" style="background:grey;">
+                                        <h1><c:out value="${debate.title}"/></h1>
+                                	</div>
+							    </c:otherwise>
+							</c:choose>
                         </c:forEach>
                 </div>
 
