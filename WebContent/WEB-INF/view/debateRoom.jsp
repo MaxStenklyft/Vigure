@@ -8,6 +8,7 @@
 <title>Vigure: Debate Room</title>
 </head>
 <body>
+	<div id="debateRoomStartTime"><p>${debate.startTime}</p></div>
     <div class="debateRoomPage">
             <div class="debateRoomHeader">
                     <a href="settings"><div class="accountMain">
@@ -81,7 +82,7 @@
                 	Time remaining until debate:
     		<script>
 			// Set the date we're counting down to
-			var countDownDate = ${startTime};
+			var countDownDate = document.getElementById("debateRoomStartTime").data;
 			
 			if(startTime == null) {
 				document.getElementById("countdownToDebate").innerHTML = "Debate Time Not Set";
