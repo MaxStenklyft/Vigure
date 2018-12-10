@@ -1,5 +1,6 @@
 package com.cs506.vigure.Controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,12 +26,14 @@ public class CreateAccountController {
 	}
 		
 	@RequestMapping(method = RequestMethod.GET)
-	public String loadLoginPage() {
+	public String loadLoginPage(HttpServletRequest request
+) {
 		return "createAccount";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String registerUser(
+		HttpServletRequest request,
 			@RequestParam("username") String username,
 			@RequestParam("password") String password,
 			@RequestParam("email") String email,
@@ -45,6 +48,7 @@ public class CreateAccountController {
 			return "home";
 		}
 		else {
+			// FAILED
 			return "createAccount";
 		}
 	}

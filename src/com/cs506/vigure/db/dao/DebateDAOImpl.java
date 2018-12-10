@@ -1,3 +1,4 @@
+
 package com.cs506.vigure.db.dao;
 
 import java.sql.ResultSet;
@@ -48,11 +49,31 @@ public class DebateDAOImpl implements DebateDAO {
 		
 		return debates;
 	}
+	
+	@Override
+	@Transactional
+	public DebateEntity getDebate(long debateId) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		String sql = "from DebateEntity where ID='" + debateId + "'";// OR where defenderNum='" + userId + "'";
+		
+		Query<DebateEntity> debateQuery = currentSession.createQuery(sql, DebateEntity.class); 
+		
+		List<DebateEntity> debates = debateQuery.getResultList();
+		
+		return debates.get(0);
+	}
 
 
 	@Override
 	public void updateDebateStatus(DebateStatusEnum status, int debateID) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 		
 	}
 	

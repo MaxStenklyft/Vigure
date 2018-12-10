@@ -48,16 +48,9 @@ public class MainController {
 	@Transactional
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView loadMainPage(HttpSession currSession) {
-		// TODO
+		if(!validate(currSession)) return new ModelAndView("loginSignUp");
 		UserEntity user = userDao.searchForEntityById((long)currSession.getAttribute("userID"));
-		ModelAndView mav;
-		if(user == null) {
-			mav = new ModelAndView("login");
-			return mav;
-		}
-		else {
-			mav = new ModelAndView("main");
-		}
+		ModelAndView mav = new ModelAndView("main");
 		List<DebateEntity> debates = debateDao.getUsersDebates(user.getId());
 		mav.addObject("debates", debates);
 		mav.addObject("user", user);
@@ -82,6 +75,8 @@ public class MainController {
 			@RequestParam("speakingInterval") String speakingInterval,
 			@RequestParam("rounds") String rounds,
 			HttpSession session) {
+		if(!validate(session)) return new ModelAndView("loginSignUp");
+		
 		List<String> errors = new ArrayList<>();
 		ModelAndView mav = new ModelAndView("main");
 		
@@ -101,7 +96,7 @@ public class MainController {
 		StringBuilder sb = new StringBuilder();
 		sb.append(errors.toArray());
 		mav.addObject("errors", sb.toString());
-		return mav;
+		return new ModelAndView("redirect:/main");
 	}
 	
 	public List<DebateEntity> getDebates(long userId) {
@@ -201,8 +196,17 @@ public class MainController {
 			}
 			
 		}
-		
-		
+
 		return errors;
+	}
+	
+	public boolean validate(HttpSession session) {
+		if(session.getAttribute("userID") == null) return false;
+		
+		UserEntity user = userDao.searchForEntityById((long)session.getAttribute("userID"));
+		if(user == null) {
+			return false;
+		}
+		return true;
 	}
 }

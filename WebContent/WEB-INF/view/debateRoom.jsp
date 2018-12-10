@@ -5,17 +5,17 @@
 <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="${pageContext.request.contextPath}/resources/js/popup.js"></script>
-<title>Vigure: Debate Room</title>
+<title>Vigure: c</title>
 </head>
 <body>
     <div class="debateRoomPage">
             <div class="debateRoomHeader">
-                    <a href="settings"><div class="accountMain">
+                    <a href="\Vigure\settings"><div class="accountMain">
                     </div></a>
             </div>
             <div class="titleAndVideos">
                 <div class="roomTitle">
-                    <h2>Was the moon landing in 1969 real?</h2>
+                    <h2>${debate.title }</h2>
                 </div>
                 <div class="videoFeeds">
                 <div class="userVideo">
@@ -47,7 +47,7 @@
 
                     <div class="descriptionPopup" id="debateDescriptionPopup">
                         <p>
-                                Many people believe the moon landing footage in 1969 was fake because the United States wanted to win the space race. Are you 100% sure the US went to the moon in 1969?
+                                ${debate.topic}
                         </p>
                     </div>
 
@@ -56,7 +56,9 @@
                     </div>
 
                     <div class="endDebate">
-                            <button onclick="location.href = 'main';">End Debate</button>
+                    	<a href="\Vigure\main">
+                            <button>End Debate</button>
+                        </a>
                     </div>
                 </div>
     </div>
