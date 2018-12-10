@@ -23,6 +23,6 @@ public interface UserDAO {
 	
 	public void updateUserSettings(
 			String username, long ID, 
-			String cat_interests);
+			String cat_interests, String bio);
 	
 }

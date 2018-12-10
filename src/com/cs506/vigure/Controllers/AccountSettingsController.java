@@ -48,12 +48,16 @@ public class AccountSettingsController {
 	}
 
 	@RequestMapping(value = "/updateSettings" , method = RequestMethod.POST)
-	public void changeUserSettings(
+	public String changeUserSettings(
 			@RequestParam("username") String username,
 			@RequestParam("password") String password,
-			@RequestParam("COI") String cat_interests, HttpSession session) {
+			@RequestParam("COI") String cat_interests, 
+			@RequestParam("bio") String bio,
+			HttpSession session) {
 		
-		userDAO.updateUserSettings(username, ID, cat_interests);
+		userDAO.updateUserSettings(username, ID, cat_interests, bio);
+		
+		return "redirect:/settings";
 
 	}
 }
