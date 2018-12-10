@@ -1,4 +1,6 @@
 <! DOCTYPE HTML>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <html>
 <head>
 <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" >
@@ -71,13 +73,16 @@
                 <div class="invitationHeading">
                     <p>Accept/Reject Invitations</p>
                 </div>
-                
+        
+
                 <div class="invitationFromUsers">
-                    <div class="userInvitation">
-                    <a href="login">
-                        <h1>R</h1>
-                    </a>
-                    </div>
+                        <c:forEach items="${debates}" var="debate">
+                                <div class="userInvitation">
+                                        <a href="debateRoom/${debate.id}">
+                                            <h1><c:out value="${debate.title}"/></h1>
+                                        </a>
+                                </div>
+                        </c:forEach>
                 </div>
 
             </div>

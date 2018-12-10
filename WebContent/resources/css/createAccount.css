@@ -139,3 +139,7 @@ body {
 	padding: 0 5%;
 	font-size: 75%;
 }
+
+#miniText {
+	font-size: 10px;
+}
