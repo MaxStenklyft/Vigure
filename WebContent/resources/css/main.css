@@ -37,7 +37,7 @@ body {
 .createAndSearch {
     position: relative;
 	width: 100%;
-	height: 75%;
+	height: 70%;
 	background-image: url("../images/mainPageBackground.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -151,7 +151,7 @@ body {
 .invitations {
     position: relative;
 	width: 100%;
-	height: 15%;
+	height: 20%;
 	background-color: white;
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -185,10 +185,10 @@ body {
 
 .userInvitation {
 	position: relative;
-width: 6vw;
+	width: 6vw;
   height: 6vw;
-  border-radius: 50%;
-  background: red;
+  border-radius: 10%;
+  background: #FF6666;
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -196,11 +196,23 @@ width: 6vw;
   margin: auto;
 }
 
+.userInvitation:hover  {
+	background: grey;
+}
+
+.userInvitation a {
+	position: relative;
+	width: 100%;
+  height: 100%;
+  display: flex;
+}
 .userInvitation h1 {
 	position: relative;
 	width: 100%;
   height: 100%;
   text-align: center;
+  font-size: 50%;
+  margin: auto;
 	}
 
 .userInvitation a:link {
@@ -208,10 +220,6 @@ width: 6vw;
 	text-decoration: none;
 }
 
-.userInvitation a:hover  {
-	color: white;
-	text-decoration: underline;
-}
 
 .userInvitation a:visited {
 	color: white;

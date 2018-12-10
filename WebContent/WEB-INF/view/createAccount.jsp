@@ -35,15 +35,17 @@
 	<form method="post" action="${pageContext.request.contextPath }/signup">
 		<table>
 			<tr>
-					<td>*Email:</td>
-					<td><input type="text" name="email"></td>
+				<td>%session.getAttribute("isValidCreateAccount");%:<br>
+					<div id="miniText">Has to be @wisc.edu</div></td>
+				<td><input type="text" name="email"></td>
 			</tr>
 			<tr>
 				<td>*Username:</td>
 				<td><input type="text" name="username"></td>
 			</tr>
 			<tr>
-				<td>*Password:</td>
+				<td>*Password:<br>
+					<div id="miniText">Between 6 to 20 characters</div></td>
 				<td><input type="password" name="password"></td>
 			</tr>
 			<tr>

@@ -96,7 +96,7 @@ public class MainController {
 		StringBuilder sb = new StringBuilder();
 		sb.append(errors.toArray());
 		mav.addObject("errors", sb.toString());
-		return mav;
+		return new ModelAndView("redirect:/main");
 	}
 	
 	public List<DebateEntity> getDebates(long userId) {
