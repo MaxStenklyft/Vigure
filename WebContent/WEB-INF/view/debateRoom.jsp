@@ -14,27 +14,33 @@
                     </div></a>
             </div>
             <div class="titleAndVideos">
-                <div class="roomTitle">
-                    <h2>${debate.title }</h2>
-                </div>
-                <div class="videoFeeds">
+              <div class="roomTitle">
+                  <h2>${debate.title }</h2>
+              </div>
+             <div>
+              <video id="Pin" width="320" height="240" autoplay>
+					<source src="/Vigure/resources/images/Pineapple.mp4" type="video/mp4">
+				</video>
+			</div>
+              <div class="videoFeeds">
+               	 
                 <div class="userVideo">
                 	<video id="localVideo" autoplay/>
 				    <script>
-				      window.addEventListener("load", function (evt) {
-				        navigator.getUserMedia({ audio: false, video: true},
-				          function(stream) {
-				            var video = document.getElementById('localVideo');
-				            video.src = window.URL.createObjectURL(stream);
-				          },
-				          function(err) {
-				            console.log("The following error occurred: " + err.name);
-				          }
-				        );
-				      });
+				    	document.getElementById("Pin").play;
+					      window.addEventListener("load", function (evt) {
+					    	  
+					        navigator.getUserMedia({ audio: false, video: true},
+					          function(stream) {
+					            var video = document.getElementById('localVideo');
+					            video.src = window.URL.createObjectURL(stream);
+					          },
+					          function(err) {
+					            console.log("The following error occurred: " + err.name);
+					          }
+					        );
+					      });
 				    </script>
-                </div>
-                <div class="opponentVideo">
                 </div>
             </div>
             </div>
